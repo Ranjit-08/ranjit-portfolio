@@ -326,7 +326,7 @@ strong { color: var(--t1); font-weight: 600; }
 }
 .m-link:hover { color: var(--t1); background: var(--hover); }
 
-.m-resume-btn {
+.m-Resume-btn {
   display: flex;
   align-items: center;
   justify-content: center;
@@ -340,7 +340,7 @@ strong { color: var(--t1); font-weight: 600; }
   border-radius: var(--radius-sm);
   transition: background 0.2s;
 }
-.m-resume-btn:hover { background: var(--blue-2); }
+.m-Resume-btn:hover { background: var(--blue-2); }
 
 .m-socials {
   display: flex;
@@ -1005,7 +1005,7 @@ strong { color: var(--t1); font-weight: 600; }
 .ci-arrow { color: var(--t3); font-size: 0.65rem; flex-shrink: 0; }
 
 /* Resume card */
-.resume-card {
+.Resume-card {
   background: var(--card);
   border: 1px solid var(--bdr);
   border-radius: var(--radius);
