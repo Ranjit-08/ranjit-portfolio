@@ -2,520 +2,206 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>Ranjit Kumar Samal | Multi-Cloud DevOps Engineer</title>
+  <title>Ranjit Kumar Samal | DevOps Engineer</title>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="description" content="Multi-Cloud DevOps Engineer specializing in AWS, Azure, GCP, Kubernetes, and CI/CD pipelines">
-  
-  <!-- Fonts -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Fira+Code:wght@400;500&display=swap" rel="stylesheet">
-  
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600;700&display=swap" rel="stylesheet">
+
   <!-- Icons -->
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-  
-  <!-- AOS Animation -->
-  <link href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css" rel="stylesheet">
-  
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
-<!-- Navigation -->
-<nav class="navbar" id="navbar">
-  <div class="nav-container">
-    <div class="logo">
-      <span class="logo-bracket">{</span>
-      <span class="logo-text">RKS</span>
-      <span class="logo-bracket">}</span>
-    </div>
-    
-    <ul class="nav-menu">
-      <li><a href="#home" class="nav-link">Home</a></li>
-      <li><a href="#about" class="nav-link">About</a></li>
-      <li><a href="#skills" class="nav-link">Skills</a></li>
-      <li><a href="#projects" class="nav-link">Projects</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#contact" class="nav-link">Contact</a></li>
+<!-- Navbar -->
+<nav class="navbar">
+  <div class="container nav-content">
+    <div class="logo">RKS</div>
+    <ul class="nav-links">
+      <li><a href="#about">About</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#education">Education</a></li>
+      <li><a href="#contact">Contact</a></li>
     </ul>
-    
-    <div class="hamburger">
-      <span></span>
-      <span></span>
-      <span></span>
-    </div>
   </div>
 </nav>
 
-<!-- Hero Section -->
-<section class="hero" id="home">
-  <div class="hero-background">
-    <div class="gradient-bg"></div>
-    <div class="animated-bg"></div>
-  </div>
-  
-  <div class="hero-container">
-    <div class="hero-content">
-      <div class="hero-text" data-aos="fade-right">
-        <div class="hero-badge">
-          <span class="status-dot"></span>
-          Available for opportunities
-        </div>
-        
-        <h1 class="hero-title">
-          Hi, I'm <span class="gradient-text">Ranjit Kumar Samal</span>
-        </h1>
-        
-        <h2 class="hero-subtitle">
-          <span class="typing"></span>
-          <span class="cursor">|</span>
-        </h2>
-        
-        <p class="hero-description">
-          Transforming ideas into scalable cloud architectures. Specializing in 
-          multi-cloud environments, container orchestration, and DevOps automation 
-          to deliver robust, production-ready solutions.
-        </p>
-        
-        <div class="hero-buttons">
-          <a href="resume.pdf" download class="btn btn-primary">
-            <i class="fas fa-download"></i> Download Resume
-          </a>
-          <a href="#projects" class="btn btn-secondary">
-            <i class="fas fa-folder"></i> View Projects
-          </a>
-        </div>
-        
-        <div class="social-links">
-          <a href="https://github.com/Ranjit-08/" target="_blank" aria-label="GitHub">
-            <i class="fab fa-github"></i>
-          </a>
-          <a href="https://www.linkedin.com/in/ranjit-k-samal" target="_blank" aria-label="LinkedIn">
-            <i class="fab fa-linkedin"></i>
-          </a>
-          <a href="mailto:ranjitsamalarj@gmail.com" aria-label="Email">
-            <i class="fas fa-envelope"></i>
-          </a>
-        </div>
-      </div>
-      
-      <div class="hero-image" data-aos="fade-left">
-        <div class="code-window">
-          <div class="window-header">
-            <span class="window-dot red"></span>
-            <span class="window-dot yellow"></span>
-            <span class="window-dot green"></span>
-            <span class="window-title">deploy.yaml</span>
-          </div>
-          <pre class="code-content">
-<span class="code-keyword">apiVersion:</span> apps/v1
-<span class="code-keyword">kind:</span> Deployment
-<span class="code-keyword">metadata:</span>
-  <span class="code-keyword">name:</span> cloud-app
-<span class="code-keyword">spec:</span>
-  <span class="code-keyword">replicas:</span> <span class="code-number">3</span>
-  <span class="code-keyword">selector:</span>
-    <span class="code-keyword">matchLabels:</span>
-      <span class="code-keyword">app:</span> cloud-native
-  <span class="code-keyword">template:</span>
-    <span class="code-keyword">spec:</span>
-      <span class="code-keyword">containers:</span>
-      - <span class="code-keyword">name:</span> app
-        <span class="code-keyword">image:</span> <span class="code-string">aws-ecr/app:latest</span>
-        <span class="code-keyword">ports:</span>
-        - <span class="code-keyword">containerPort:</span> <span class="code-number">8080</span>
-          </pre>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+<!-- Hero -->
+<section class="hero">
+  <div class="container hero-grid">
 
-<!-- About Section -->
-<section id="about" class="about-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <span class="title-number">01.</span> About Me
-    </h2>
-    
-    <div class="about-content" data-aos="fade-up">
-      <div class="about-text">
-        <p>
-          I'm a passionate Multi-Cloud DevOps Engineer with extensive hands-on experience 
-          in designing, implementing, and managing cloud infrastructure across AWS, Azure, 
-          and Google Cloud Platform.
-        </p>
-        <p>
-          My expertise spans from container orchestration with Kubernetes to building 
-          robust CI/CD pipelines that enable teams to deliver software faster and more 
-          reliably. I believe in Infrastructure as Code principles and automation-first 
-          approach to eliminate manual processes and reduce human error.
-        </p>
-        <p>
-          Currently focused on cloud-native architectures, serverless computing, and 
-          implementing DevSecOps practices to build secure, scalable, and resilient systems.
-        </p>
-      </div>
-      
-      <div class="about-stats">
-        <div class="stat-card">
-          <div class="stat-number">3+</div>
-          <div class="stat-label">Cloud Platforms</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">15+</div>
-          <div class="stat-label">DevOps Tools</div>
-        </div>
-        <div class="stat-card">
-          <div class="stat-number">20+</div>
-          <div class="stat-label">Projects Completed</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+    <div class="hero-text">
+      <h1>
+        Hi, I'm <span class="gradient-text">Ranjit Kumar Samal</span>
+      </h1>
 
-<!-- Skills Section -->
-<section id="skills" class="skills-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <span class="title-number">02.</span> Technical Stack
-    </h2>
-    
-    <div class="skills-categories">
-      <!-- Cloud Platforms -->
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-        <h3 class="category-title">
-          <i class="fas fa-cloud"></i> Cloud Platforms
-        </h3>
-        <div class="skill-tags">
-          <span class="skill-tag">
-            <i class="fab fa-aws"></i> AWS
-          </span>
-          <span class="skill-tag">
-            <i class="fab fa-microsoft"></i> Azure
-          </span>
-          <span class="skill-tag">
-            <i class="fab fa-google"></i> GCP
-          </span>
-        </div>
-      </div>
-      
-      <!-- DevOps Tools -->
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="200">
-        <h3 class="category-title">
-          <i class="fas fa-tools"></i> DevOps & CI/CD
-        </h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Jenkins</span>
-          <span class="skill-tag">GitHub Actions</span>
-          <span class="skill-tag">GitLab CI/CD</span>
-          <span class="skill-tag">ArgoCD</span>
-        </div>
-      </div>
-      
-      <!-- Containers & Orchestration -->
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="300">
-        <h3 class="category-title">
-          <i class="fas fa-ship"></i> Containers & Orchestration
-        </h3>
-        <div class="skill-tags">
-          <span class="skill-tag">
-            <i class="fab fa-docker"></i> Docker
-          </span>
-          <span class="skill-tag">Kubernetes</span>
-          <span class="skill-tag">Helm</span>
-          <span class="skill-tag">Docker Compose</span>
-        </div>
-      </div>
-      
-      <!-- Infrastructure as Code -->
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="400">
-        <h3 class="category-title">
-          <i class="fas fa-code"></i> Infrastructure as Code
-        </h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Terraform</span>
-          <span class="skill-tag">OpenTofu</span>
-          <span class="skill-tag">Ansible</span>
-          <span class="skill-tag">CloudFormation</span>
-        </div>
-      </div>
-      
-      <!-- Monitoring -->
-      <div class="skill-category" data-aos="fade-up" data-aos-delay="500">
-        <h3 class="category-title">
-          <i class="fas fa-chart-line"></i> Monitoring & Observability
-        </h3>
-        <div class="skill-tags">
-          <span class="skill-tag">Prometheus</span>
-          <span class="skill-tag">Grafana</span>
-          <span class="skill-tag">CloudWatch</span>
-          <span class="skill-tag">ELK Stack</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
+      <h2 class="typing"></h2>
 
-<!-- Projects Section -->
-<section id="projects" class="projects-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <span class="title-number">03.</span> Featured Projects
-    </h2>
-    
-    <div class="projects-grid">
-      <!-- Project 1 -->
-      <div class="project-card" data-aos="fade-up" data-aos-delay="100">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-music"></i>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-            <a href="#" target="_blank"><i class="fas fa-external-link-alt"></i></a>
-          </div>
-        </div>
-        
-        <h3 class="project-title">Three-Tier Music Streaming Platform</h3>
-        <p class="project-description">
-          Architected a secure, scalable music streaming application with OTP-based authentication, 
-          role-based access control, and cloud-native infrastructure. Implemented microservices 
-          architecture with S3 for media storage and RDS for data persistence.
-        </p>
-        
-        <div class="project-tech">
-          <span>AWS EC2</span>
-          <span>S3</span>
-          <span>RDS</span>
-          <span>Docker</span>
-          <span>NGINX</span>
-          <span>CI/CD</span>
-        </div>
-      </div>
-      
-      <!-- Project 2 -->
-      <div class="project-card" data-aos="fade-up" data-aos-delay="200">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-rocket"></i>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        
-        <h3 class="project-title">Cloud-Native DevOps Pipeline</h3>
-        <p class="project-description">
-          Designed and implemented end-to-end CI/CD pipeline with automated testing, 
-          containerization, and Kubernetes deployment. Achieved 70% reduction in deployment 
-          time with zero-downtime rolling updates.
-        </p>
-        
-        <div class="project-tech">
-          <span>Jenkins</span>
-          <span>SonarQube</span>
-          <span>Docker</span>
-          <span>Kubernetes</span>
-          <span>AWS ECR</span>
-        </div>
-      </div>
-      
-      <!-- Project 3 -->
-      <div class="project-card" data-aos="fade-up" data-aos-delay="300">
-        <div class="project-header">
-          <div class="project-icon">
-            <i class="fas fa-chart-area"></i>
-          </div>
-          <div class="project-links">
-            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
-          </div>
-        </div>
-        
-        <h3 class="project-title">Automated Monitoring & Auto-Scaling</h3>
-        <p class="project-description">
-          Built intelligent monitoring solution with automated alerting and self-healing 
-          capabilities. Integrated with AWS Auto Scaling Groups for dynamic resource 
-          management based on real-time metrics.
-        </p>
-        
-        <div class="project-tech">
-          <span>Ansible</span>
-          <span>Lambda</span>
-          <span>Prometheus</span>
-          <span>Grafana</span>
-          <span>AWS ASG</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Education Section -->
-<section id="education" class="education-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <span class="title-number">04.</span> Education
-    </h2>
-    
-    <div class="timeline">
-      <div class="timeline-item" data-aos="fade-up">
-        <div class="timeline-date">2023 - 2025</div>
-        <div class="timeline-content">
-          <h3>Master of Computer Applications (MCA)</h3>
-          <p class="institution">ABIT, Cuttack</p>
-          <p class="grade">CGPA: 8.88/10</p>
-        </div>
-      </div>
-      
-      <div class="timeline-item" data-aos="fade-up" data-aos-delay="100">
-        <div class="timeline-date">2019 - 2022</div>
-        <div class="timeline-content">
-          <h3>Bachelor's Degree</h3>
-          <p class="institution">Utkal University</p>
-          <p class="grade">CGPA: 7.0/10</p>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- Contact Section -->
-<section id="contact" class="contact-section">
-  <div class="container">
-    <h2 class="section-title" data-aos="fade-up">
-      <span class="title-number">05.</span> Get In Touch
-    </h2>
-    
-    <div class="contact-content" data-aos="fade-up">
-      <p class="contact-subtitle">
-        I'm currently looking for new opportunities. Whether you have a question 
-        or just want to say hi, my inbox is always open!
+      <p>
+        Multi-Cloud DevOps Engineer specializing in AWS, Azure & GCP.
+        Building scalable cloud-native applications, CI/CD pipelines,
+        and automated infrastructure.
       </p>
-      
-      <div class="contact-info">
-        <a href="mailto:ranjitsamalarj@gmail.com" class="contact-item">
-          <i class="fas fa-envelope"></i>
-          <span>ranjitsamalarj@gmail.com</span>
+
+      <div class="hero-buttons">
+        <a href="resume.pdf" download class="btn primary">
+          <i class="fas fa-download"></i> Download Resume
         </a>
-        
-        <a href="tel:+916370224907" class="contact-item">
-          <i class="fas fa-phone"></i>
-          <span>+91 6370224907</span>
+        <a href="#projects" class="btn outline">
+          <i class="fas fa-folder"></i> View Projects
         </a>
-        
-        <div class="contact-item">
-          <i class="fas fa-map-marker-alt"></i>
-          <span>Hyderabad, India | Open to Remote</span>
-        </div>
       </div>
-      
-      <a href="mailto:ranjitsamalarj@gmail.com" class="btn btn-primary btn-large">
-        <i class="fas fa-paper-plane"></i> Say Hello
-      </a>
+
+      <div class="social-icons">
+        <a href="https://github.com/Ranjit-08/" target="_blank">
+          <i class="fab fa-github"></i>
+        </a>
+        <a href="https://www.linkedin.com/in/ranjit-k-samal" target="_blank">
+          <i class="fab fa-linkedin"></i>
+        </a>
+        <a href="mailto:ranjitsamalarj@gmail.com">
+          <i class="fas fa-envelope"></i>
+        </a>
+      </div>
+    </div>
+
+    <div class="hero-card">
+      <div class="card-header">
+        <span></span><span></span><span></span>
+      </div>
+      <div class="card-body">
+        <p><span>Cloud:</span> AWS | Azure | GCP</p>
+        <p><span>Containers:</span> Docker, Kubernetes</p>
+        <p><span>CI/CD:</span> Jenkins, GitHub Actions</p>
+        <p><span>IaC:</span> Terraform, Ansible</p>
+      </div>
+    </div>
+
+  </div>
+</section>
+
+<!-- About -->
+<section id="about">
+  <div class="container">
+    <h2 class="section-title">About Me</h2>
+    <p class="section-text">
+      Motivated Multi-Cloud DevOps Engineer with hands-on experience in AWS,
+      Azure and Google Cloud. Strong background in CI/CD automation,
+      container orchestration, Infrastructure as Code and monitoring solutions.
+      Passionate about building reliable, scalable and secure cloud-native systems.
+    </p>
+  </div>
+</section>
+
+<!-- Skills -->
+<section id="skills" class="dark-section">
+  <div class="container">
+    <h2 class="section-title">Technical Stack</h2>
+
+    <div class="grid">
+      <div class="card">AWS, Azure, GCP</div>
+      <div class="card">Docker & Kubernetes</div>
+      <div class="card">Terraform & Ansible</div>
+      <div class="card">Jenkins, GitHub Actions</div>
+      <div class="card">Prometheus & Grafana</div>
+      <div class="card">Linux & Networking</div>
     </div>
   </div>
 </section>
 
-<!-- Footer -->
-<footer class="footer">
-  <div class="footer-content">
-    <p>Designed & Built by Ranjit Kumar Samal</p>
-    <p>© 2024 All Rights Reserved</p>
+<!-- Projects -->
+<section id="projects">
+  <div class="container">
+    <h2 class="section-title">Featured Projects</h2>
+
+    <div class="grid">
+
+      <div class="project">
+        <h3>🎵 Three-Tier Music Streaming App</h3>
+        <p>
+          Built secure music platform with OTP authentication and admin-only upload.
+          Songs stored in S3, user and singer data in RDS.
+          Deployed using Docker and AWS infrastructure.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>🚀 Cloud DevOps CI/CD Pipeline</h3>
+        <p>
+          Automated build, test and deployment pipeline using Jenkins,
+          GitHub Actions and Kubernetes with zero downtime.
+        </p>
+      </div>
+
+      <div class="project">
+        <h3>📊 Auto-Scaling Monitoring System</h3>
+        <p>
+          Integrated AWS ASG with Prometheus & Grafana.
+          Automated monitoring setup using Ansible and Lambda.
+        </p>
+      </div>
+
+    </div>
   </div>
+</section>
+
+<!-- Education -->
+<section id="education" class="dark-section">
+  <div class="container">
+    <h2 class="section-title">Education</h2>
+
+    <div class="timeline">
+      <div>
+        <h4>MCA (2023-2025)</h4>
+        <p>ABIT, Cuttack | CGPA: 8.88</p>
+      </div>
+      <div>
+        <h4>Bachelor’s Degree</h4>
+        <p>Utkal University | CGPA: 7.0</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact -->
+<section id="contact">
+  <div class="container contact-box">
+    <h2>Get In Touch</h2>
+    <p>📧 ranjitsamalarj@gmail.com</p>
+    <p>📱 +91 6370224907</p>
+    <p>📍 Hyderabad, India | Open to Remote</p>
+  </div>
+</section>
+
+<footer>
+  © 2024 Ranjit Kumar Samal | DevOps Engineer
 </footer>
 
-<!-- Scripts -->
-<script src="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.js"></script>
+<!-- Typing Script -->
 <script>
-  AOS.init({
-    duration: 1000,
-    once: true
-  });
+const text = ["Multi-Cloud DevOps Engineer",
+              "AWS | Azure | GCP Specialist",
+              "Kubernetes & CI/CD Expert"];
 
-  // Typing Effect
-  const phrases = [
-    "Multi-Cloud DevOps Engineer",
-    "AWS | Azure | GCP Specialist",
-    "Kubernetes & Docker Expert",
-    "CI/CD Pipeline Architect",
-    "Infrastructure as Code Developer"
-  ];
+let count = 0, index = 0, currentText = "", letter = "";
 
-  let phraseIndex = 0;
-  let letterIndex = 0;
-  let currentPhrase = "";
-  let isDeleting = false;
+(function type(){
+  if(count === text.length) count = 0;
+  currentText = text[count];
+  letter = currentText.slice(0, ++index);
 
-  function type() {
-    const typingElement = document.querySelector(".typing");
-    currentPhrase = phrases[phraseIndex];
+  document.querySelector(".typing").textContent = letter;
 
-    if (isDeleting) {
-      letterIndex--;
-      typingElement.textContent = currentPhrase.substring(0, letterIndex);
-    } else {
-      letterIndex++;
-      typingElement.textContent = currentPhrase.substring(0, letterIndex);
-    }
-
-    let typeSpeed = 100;
-
-    if (!isDeleting && letterIndex === currentPhrase.length) {
-      typeSpeed = 2000;
-      isDeleting = true;
-    } else if (isDeleting && letterIndex === 0) {
-      isDeleting = false;
-      phraseIndex = (phraseIndex + 1) % phrases.length;
-      typeSpeed = 500;
-    } else if (isDeleting) {
-      typeSpeed = 50;
-    }
-
-    setTimeout(type, typeSpeed);
+  if(letter.length === currentText.length){
+    count++; index = 0;
+    setTimeout(type, 1500);
+  } else {
+    setTimeout(type, 80);
   }
-
-  type();
-
-  // Navbar scroll effect
-  window.addEventListener('scroll', function() {
-    const navbar = document.getElementById('navbar');
-    if (window.scrollY > 50) {
-      navbar.classList.add('navbar-scrolled');
-    } else {
-      navbar.classList.remove('navbar-scrolled');
-    }
-  });
-
-  // Mobile menu toggle
-  const hamburger = document.querySelector('.hamburger');
-  const navMenu = document.querySelector('.nav-menu');
-
-  hamburger.addEventListener('click', () => {
-    hamburger.classList.toggle('active');
-    navMenu.classList.toggle('active');
-  });
-
-  // Close menu on link click
-  document.querySelectorAll('.nav-link').forEach(link => {
-    link.addEventListener('click', () => {
-      hamburger.classList.remove('active');
-      navMenu.classList.remove('active');
-    });
-  });
-
-  // Smooth scroll for navigation links
-  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
-    anchor.addEventListener('click', function(e) {
-      e.preventDefault();
-      const target = document.querySelector(this.getAttribute('href'));
-      if (target) {
-        target.scrollIntoView({
-          behavior: 'smooth',
-          block: 'start'
-        });
-      }
-    });
-  });
+})();
 </script>
 
 </body>
