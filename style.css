@@ -1,7 +1,12 @@
-body {
+* {
   margin: 0;
-  font-family: Arial, sans-serif;
-  background: #0f172a;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Poppins', sans-serif;
+}
+
+body {
+  background: linear-gradient(135deg, #0f172a, #1e293b);
   color: white;
   scroll-behavior: smooth;
 }
@@ -9,8 +14,8 @@ body {
 nav {
   display: flex;
   justify-content: space-between;
-  padding: 15px 50px;
-  background: #1e293b;
+  padding: 20px 60px;
+  background: rgba(0,0,0,0.6);
   position: sticky;
   top: 0;
 }
@@ -18,45 +23,116 @@ nav {
 nav ul {
   list-style: none;
   display: flex;
-  gap: 20px;
+  gap: 25px;
 }
 
 nav a {
-  color: white;
   text-decoration: none;
+  color: white;
+  transition: 0.3s;
+}
+
+nav a:hover {
+  color: #38bdf8;
 }
 
 .hero {
   text-align: center;
-  padding: 100px 20px;
+  padding: 120px 20px;
+  animation: fadeIn 2s ease-in;
+}
+
+.hero h1 {
+  font-size: 3rem;
+}
+
+.hero h2 {
+  color: #38bdf8;
+  height: 40px;
+}
+
+.hero p {
+  margin: 20px 0;
+}
+
+.hero-buttons {
+  display: flex;
+  justify-content: center;
+  gap: 15px;
+  flex-wrap: wrap;
+}
+
+.btn {
+  padding: 10px 20px;
+  border-radius: 8px;
+  text-decoration: none;
+  border: 1px solid #38bdf8;
+  color: white;
+  transition: 0.3s;
+}
+
+.btn:hover {
+  background: #38bdf8;
+  color: black;
+}
+
+.primary {
+  background: #38bdf8;
+  color: black;
 }
 
 section {
-  padding: 60px 80px;
+  padding: 80px 100px;
+}
+
+section h2 {
+  margin-bottom: 30px;
+  color: #38bdf8;
 }
 
 .skills-grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
   gap: 20px;
 }
 
 .skills-grid div {
-  background: #1e293b;
+  background: rgba(255,255,255,0.05);
   padding: 15px;
-  border-radius: 8px;
-  text-align: center;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.skills-grid div:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.1);
 }
 
 .project-card {
-  background: #1e293b;
+  background: rgba(255,255,255,0.05);
   padding: 20px;
   margin-bottom: 20px;
-  border-radius: 10px;
+  border-radius: 12px;
+  transition: 0.3s;
+}
+
+.project-card:hover {
+  transform: translateY(-8px);
+  background: rgba(255,255,255,0.1);
+}
+
+#contact a {
+  color: #38bdf8;
+  text-decoration: none;
 }
 
 footer {
   text-align: center;
   padding: 20px;
-  background: #1e293b;
+  background: rgba(0,0,0,0.5);
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to { opacity: 1; }
 }

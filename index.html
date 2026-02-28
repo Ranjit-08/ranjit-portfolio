@@ -3,12 +3,17 @@
 <head>
   <meta charset="UTF-8">
   <title>Ranjit Samal | DevOps Engineer</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <!-- Google Font -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
 <nav>
-  <h2>Ranjit Samal</h2>
+  <div class="logo">Ranjit Samal</div>
   <ul>
     <li><a href="#about">About</a></li>
     <li><a href="#skills">Skills</a></li>
@@ -18,22 +23,28 @@
 </nav>
 
 <section class="hero">
-  <h1>Hi, I'm Ranjit 👋</h1>
-  <h2>DevOps & Cloud Engineer</h2>
-  <p>Building scalable infrastructure with AWS, Kubernetes & CI/CD</p>
+  <h1>Hello, I'm Ranjit 👋</h1>
+  <h2><span class="typing"></span></h2>
+  <p>Building scalable & automated cloud infrastructure with AWS & Kubernetes</p>
+
+  <div class="hero-buttons">
+    <a href="resume.pdf" download class="btn primary">Download Resume</a>
+    <a href="https://github.com/Ranjit-08/" target="_blank" class="btn">GitHub</a>
+    <a href="https://www.linkedin.com/in/ranjit-k-samal" target="_blank" class="btn">LinkedIn</a>
+  </div>
 </section>
 
 <section id="about">
   <h2>About Me</h2>
   <p>
     I am a passionate DevOps Engineer with hands-on experience in AWS, EKS,
-    Docker, Terraform, GitHub Actions and cloud automation.
-    I build scalable, production-ready infrastructure and CI/CD pipelines.
+    Docker, Terraform, CI/CD pipelines and infrastructure automation.
+    I design production-ready scalable cloud architectures and optimize deployments.
   </p>
 </section>
 
 <section id="skills">
-  <h2>Skills</h2>
+  <h2>Technical Skills</h2>
   <div class="skills-grid">
     <div>AWS (EC2, S3, RDS, EKS, IAM, ALB)</div>
     <div>Docker</div>
@@ -50,32 +61,61 @@
   <h2>Projects</h2>
 
   <div class="project-card">
-    <h3>3-Tier App on EKS</h3>
-    <p>Deployed scalable 3-tier architecture using EKS, ALB and RDS.</p>
+    <h3>3-Tier Architecture on EKS</h3>
+    <p>Designed and deployed scalable 3-tier app using EKS, ALB, RDS & Docker.</p>
   </div>
 
   <div class="project-card">
-    <h3>CI/CD Pipeline</h3>
-    <p>Automated Docker build, ECR push and Kubernetes deployment using GitHub Actions.</p>
+    <h3>CI/CD Pipeline Automation</h3>
+    <p>Automated Docker builds, ECR push and Kubernetes deployment using GitHub Actions.</p>
   </div>
 
   <div class="project-card">
-    <h3>Infrastructure as Code</h3>
-    <p>Provisioned complete AWS infrastructure using Terraform.</p>
+    <h3>Infrastructure as Code (Terraform)</h3>
+    <p>Provisioned AWS VPC, EKS, RDS and networking components using Terraform.</p>
   </div>
 
 </section>
 
 <section id="contact">
-  <h2>Contact</h2>
-  <p>Email: ranjitsamalarj@gmail.com</p>
-  <p>GitHub: https://github.com/Ranjit-08/</p>
-  <p>LinkedIn: www.linkedin.com/in/ranjit-k-samal</p>
+  <h2>Contact Me</h2>
+
+  <p>📧 <a href="mailto:ranjitsamalarj@gmail.com">ranjitsamalarj@gmail.com</a></p>
+  <p>📱 <a href="tel:6370224907">6370224907</a></p>
+  <p>💻 <a href="https://github.com/Ranjit-08/" target="_blank">GitHub</a></p>
+  <p>🔗 <a href="https://www.linkedin.com/in/ranjit-k-samal" target="_blank">LinkedIn</a></p>
+
 </section>
 
 <footer>
   <p>© 2026 Ranjit Samal | DevOps Engineer</p>
 </footer>
+
+<!-- Typing Script -->
+<script>
+  const text = ["DevOps Engineer", "Cloud Engineer", "AWS & Kubernetes Specialist"];
+  let count = 0;
+  let index = 0;
+  let currentText = "";
+  let letter = "";
+
+  (function type() {
+    if (count === text.length) {
+      count = 0;
+    }
+    currentText = text[count];
+    letter = currentText.slice(0, ++index);
+
+    document.querySelector(".typing").textContent = letter;
+    if (letter.length === currentText.length) {
+      count++;
+      index = 0;
+      setTimeout(type, 1000);
+    } else {
+      setTimeout(type, 100);
+    }
+  })();
+</script>
 
 </body>
 </html>
