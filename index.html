@@ -8,449 +8,596 @@
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;500;600;700;800&family=DM+Sans:ital,wght@0,300;0,400;0,500;1,400&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
   <link rel="stylesheet" href="style.css">
 </head>
 <body>
 
+<!-- Custom Cursor -->
+<div class="cursor-dot"></div>
+<div class="cursor-ring"></div>
+
+<!-- Particle Canvas -->
+<canvas id="particleCanvas"></canvas>
+
 <!-- Navigation -->
 <nav class="navbar" id="navbar">
   <div class="nav-container">
-    <a href="#home" class="nav-logo">
-      <div class="avatar-mark">
-        <svg viewBox="0 0 36 36" fill="none" xmlns="http://www.w3.org/2000/svg">
-          <circle cx="18" cy="12" r="7" fill="#4f8ef7"/>
-          <path d="M4 36 C4 24 32 24 32 36" fill="#4f8ef7"/>
+    <a href="#home" class="nav-avatar" aria-label="Home">
+      <div class="nav-avatar-ring"></div>
+      <div class="nav-avatar-inner">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Head -->
+          <circle cx="20" cy="14" r="7" fill="url(#navGrad)"/>
+          <!-- Shoulders -->
+          <path d="M6 38 C6 28 34 28 34 38" fill="url(#navGrad)" opacity="0.85"/>
+          <defs>
+            <linearGradient id="navGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00d4ff"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
         </svg>
       </div>
-      <span class="logo-name">Ranjit Kumar Samal</span>
     </a>
-
     <ul class="nav-menu" id="navMenu">
-      <li><a href="#about"     class="nav-link">About</a></li>
-      <li><a href="#skills"    class="nav-link">Skills</a></li>
-      <li><a href="#projects"  class="nav-link">Projects</a></li>
-      <li><a href="#education" class="nav-link">Education</a></li>
-      <li><a href="#contact"   class="nav-link">Contact</a></li>
-      <li>
-        <a href="Resume.pdf" download class="nav-resume-btn">
-          <i class="fas fa-download"></i> Resume
-        </a>
-      </li>
+      <li><a href="#home" class="nav-link"><span class="link-num">01.</span>Home</a></li>
+      <li><a href="#about" class="nav-link"><span class="link-num">02.</span>About</a></li>
+      <li><a href="#skills" class="nav-link"><span class="link-num">03.</span>Skills</a></li>
+      <li><a href="#projects" class="nav-link"><span class="link-num">04.</span>Projects</a></li>
+      <li><a href="#education" class="nav-link"><span class="link-num">05.</span>Education</a></li>
+      <li><a href="#contact" class="nav-link"><span class="link-num">06.</span>Contact</a></li>
     </ul>
-
     <div class="hamburger" id="hamburger">
       <span></span><span></span><span></span>
     </div>
   </div>
 </nav>
 
-<!-- HERO -->
+<!-- Hero Section -->
 <section class="hero" id="home">
   <div class="hero-container">
+    <div class="hero-content">
 
-    <div class="hero-left fade-up">
-      <div class="availability-pill">
-        <span class="avail-dot"></span>
-        Available for new opportunities
-      </div>
-
-      <h1 class="hero-heading">
-        Ranjit Kumar<br><span class="accent">Samal</span>
-      </h1>
-
-      <p class="hero-role-tag">Multi-Cloud DevOps Engineer</p>
-
-      <p class="hero-bio">
-        Building scalable cloud infrastructure across AWS, Azure &amp; GCP.
-        Specializing in Kubernetes, CI/CD automation, and Infrastructure as Code —
-        helping engineering teams ship faster with zero-downtime deployments.
-      </p>
-
-      <div class="hero-cta">
-        <a href="Resume.pdf" download class="btn-primary">
-          <i class="fas fa-download"></i>
-          Download Resume
-        </a>
-        <a href="#projects" class="btn-outline">
-          View Projects <i class="fas fa-arrow-right"></i>
-        </a>
-      </div>
-
-      <div class="hero-meta">
-        <span><i class="fas fa-location-dot"></i> Hyderabad, India</span>
-        <span class="dot">·</span>
-        <span><i class="fas fa-globe"></i> Open to Remote</span>
-      </div>
-
-      <div class="hero-socials">
-        <a href="https://github.com/Ranjit-08/" target="_blank" class="s-link">
-          <i class="fab fa-github"></i> GitHub
-        </a>
-        <a href="https://www.linkedin.com/in/ranjit-k-samal" target="_blank" class="s-link">
-          <i class="fab fa-linkedin"></i> LinkedIn
-        </a>
-        <a href="mailto:ranjitsamalarj@gmail.com" class="s-link">
-          <i class="fas fa-envelope"></i> Email
-        </a>
-      </div>
-    </div>
-
-    <div class="hero-right fade-up" style="--d:0.15s">
-      <div class="profile-card">
-        <div class="profile-avatar">
-          <!--
-            TO USE YOUR REAL PHOTO replace the SVG below with:
-            <img src="your-photo.jpg" alt="Ranjit Kumar Samal">
-          -->
-          <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <circle cx="100" cy="100" r="100" fill="#131c2e"/>
-            <ellipse cx="100" cy="82" rx="32" ry="36" fill="#d4956a"/>
-            <path d="M68 78 C68 52 132 52 132 78 C132 62 124 50 100 48 C76 50 68 62 68 78Z" fill="#150f08"/>
-            <rect x="87" y="112" width="26" height="24" rx="12" fill="#c07840"/>
-            <ellipse cx="100" cy="82" rx="32" ry="36" fill="#d4956a"/>
-            <path d="M68 78 C68 52 132 52 132 78 C132 66 124 52 100 50 C76 52 68 66 68 78Z" fill="#150f08"/>
-            <ellipse cx="85" cy="84" rx="5" ry="5.5" fill="#1a2030"/>
-            <ellipse cx="115" cy="84" rx="5" ry="5.5" fill="#1a2030"/>
-            <circle cx="87" cy="82" r="1.5" fill="white" opacity="0.7"/>
-            <circle cx="117" cy="82" r="1.5" fill="white" opacity="0.7"/>
-            <path d="M79 74 Q85 71 91 74" stroke="#150f08" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-            <path d="M109 74 Q115 71 121 74" stroke="#150f08" stroke-width="2.2" stroke-linecap="round" fill="none"/>
-            <path d="M88 100 Q100 108 112 100" stroke="#a05828" stroke-width="2" stroke-linecap="round" fill="none"/>
-            <ellipse cx="68" cy="86" rx="4.5" ry="7" fill="#c07840"/>
-            <ellipse cx="132" cy="86" rx="4.5" ry="7" fill="#c07840"/>
-            <path d="M25 200 C25 155 175 155 175 200Z" fill="#1a3060"/>
-            <path d="M100 136 L85 158 L100 152Z" fill="#deeafb"/>
-            <path d="M100 136 L115 158 L100 152Z" fill="#deeafb"/>
-          </svg>
+      <div class="hero-text">
+        <div class="hero-badge reveal-up" style="--d:0.1s">
+          <span class="status-dot"></span>
+          Open to opportunities
         </div>
 
-        <div class="profile-stats">
-          <div class="ps-item">
-            <div class="ps-top"><span class="ps-num" data-count="3">0</span><span class="ps-plus">+</span></div>
-            <div class="ps-label">Cloud Platforms</div>
-          </div>
-          <div class="ps-divider"></div>
-          <div class="ps-item">
-            <div class="ps-top"><span class="ps-num" data-count="15">0</span><span class="ps-plus">+</span></div>
-            <div class="ps-label">DevOps Tools</div>
-          </div>
-          <div class="ps-divider"></div>
-          <div class="ps-item">
-            <div class="ps-top"><span class="ps-num" data-count="20">0</span><span class="ps-plus">+</span></div>
-            <div class="ps-label">Projects</div>
-          </div>
+        <h1 class="hero-title reveal-up" style="--d:0.2s">
+          Hi, I'm<br>
+          <span class="hero-name">Ranjit Kumar<br>Samal</span>
+        </h1>
+
+        <div class="hero-role reveal-up" style="--d:0.35s">
+          <span class="role-prefix">&gt;_&nbsp;</span>
+          <span class="typing"></span>
+          <span class="cursor-text">|</span>
         </div>
 
-        <div class="profile-tags">
-          <span><i class="fab fa-aws"></i> AWS</span>
-          <span><i class="fab fa-docker"></i> Docker</span>
-          <span>Kubernetes</span>
-          <span>Terraform</span>
-        </div>
-      </div>
-    </div>
-
-  </div>
-</section>
-
-<!-- ABOUT -->
-<section id="about" class="section alt">
-  <div class="container">
-    <p class="sec-label fade-up">About Me</p>
-    <h2 class="sec-title fade-up" style="--d:0.05s">Turning Cloud Complexity<br>into Reliable Systems</h2>
-
-    <div class="about-wrap">
-      <div class="about-copy fade-up" style="--d:0.1s">
-        <p>I'm a Multi-Cloud DevOps Engineer with production experience designing and managing
-           infrastructure across <strong>AWS, Azure, and GCP</strong>. I bridge the gap between
-           development and operations — building the pipelines, platforms, and guardrails that let
-           teams move fast without breaking things.</p>
-        <p>My work is grounded in <strong>Infrastructure as Code</strong>, GitOps workflows, and
-           security-first thinking. I've led CI/CD transformations that cut deployment times by 70%,
-           built self-healing Kubernetes clusters, and implemented full-stack observability that gives
-           teams complete visibility into their systems.</p>
-        <p>Currently completing my MCA (CGPA 8.88/10) at ABIT, Cuttack while building real-world
-           cloud-native projects. Actively looking for a role where I can contribute from day one.</p>
-      </div>
-
-      <div class="about-pillars fade-up" style="--d:0.18s">
-        <div class="pillar">
-          <div class="pillar-icon"><i class="fas fa-shield-halved"></i></div>
-          <div class="pillar-title">DevSecOps</div>
-          <div class="pillar-desc">Security baked in from day one, not bolted on at the end.</div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon"><i class="fas fa-code-branch"></i></div>
-          <div class="pillar-title">Automation First</div>
-          <div class="pillar-desc">If it runs more than once, it gets automated.</div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon"><i class="fas fa-chart-line"></i></div>
-          <div class="pillar-title">Observability</div>
-          <div class="pillar-desc">Metrics, logs, traces — full visibility at all times.</div>
-        </div>
-        <div class="pillar">
-          <div class="pillar-icon"><i class="fas fa-cloud"></i></div>
-          <div class="pillar-title">Cloud Native</div>
-          <div class="pillar-desc">Designed for scale, resilience, and cost efficiency.</div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- SKILLS -->
-<section id="skills" class="section">
-  <div class="container">
-    <p class="sec-label fade-up">Technical Skills</p>
-    <h2 class="sec-title fade-up" style="--d:0.05s">Tools &amp; Technologies</h2>
-
-    <div class="skills-grid">
-      <div class="skill-card fade-up" style="--d:0.08s">
-        <div class="sk-head"><i class="fas fa-cloud"></i><h3>Cloud Platforms</h3></div>
-        <div class="sk-tags">
-          <span><i class="fab fa-aws"></i> AWS</span>
-          <span><i class="fab fa-microsoft"></i> Azure</span>
-          <span><i class="fab fa-google"></i> GCP</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up" style="--d:0.12s">
-        <div class="sk-head"><i class="fas fa-ship"></i><h3>Containers &amp; Orchestration</h3></div>
-        <div class="sk-tags">
-          <span><i class="fab fa-docker"></i> Docker</span>
-          <span>Kubernetes</span>
-          <span>Helm</span>
-          <span>Docker Compose</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up" style="--d:0.16s">
-        <div class="sk-head"><i class="fas fa-code-branch"></i><h3>CI/CD &amp; DevOps</h3></div>
-        <div class="sk-tags">
-          <span>Jenkins</span>
-          <span>GitHub Actions</span>
-          <span>GitLab CI/CD</span>
-          <span>ArgoCD</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up" style="--d:0.2s">
-        <div class="sk-head"><i class="fas fa-layer-group"></i><h3>Infrastructure as Code</h3></div>
-        <div class="sk-tags">
-          <span>Terraform</span>
-          <span>OpenTofu</span>
-          <span>Ansible</span>
-          <span>CloudFormation</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up" style="--d:0.24s">
-        <div class="sk-head"><i class="fas fa-chart-line"></i><h3>Monitoring &amp; Observability</h3></div>
-        <div class="sk-tags">
-          <span>Prometheus</span>
-          <span>Grafana</span>
-          <span>CloudWatch</span>
-          <span>ELK Stack</span>
-        </div>
-      </div>
-
-      <div class="skill-card fade-up" style="--d:0.28s">
-        <div class="sk-head"><i class="fas fa-shield-halved"></i><h3>Security &amp; Networking</h3></div>
-        <div class="sk-tags">
-          <span>IAM / RBAC</span>
-          <span>VPC Design</span>
-          <span>SSL / TLS</span>
-          <span>DevSecOps</span>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section alt">
-  <div class="container">
-    <p class="sec-label fade-up">Projects</p>
-    <h2 class="sec-title fade-up" style="--d:0.05s">Featured Work</h2>
-
-    <div class="proj-list">
-
-      <div class="proj-card fade-up" style="--d:0.1s">
-        <div class="pc-num">01</div>
-        <div class="pc-body">
-          <div class="pc-header">
-            <h3>Three-Tier Music Streaming Platform</h3>
-            <a href="#" class="pc-gh"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-          <p>Architected a secure, production-grade music streaming application with OTP-based
-             authentication, role-based access control, and full CI/CD automation. S3 handles
-             media storage, RDS provides managed database, NGINX handles SSL termination — all
-             deployed on AWS with automated rollback on failure.</p>
-          <div class="pc-tags">
-            <span>AWS EC2</span><span>S3</span><span>RDS</span>
-            <span>Docker</span><span>NGINX</span><span>GitHub Actions</span>
-          </div>
-        </div>
-        <div class="pc-metric">
-          <div class="pm-val">99.9%</div>
-          <div class="pm-lab">Uptime SLA</div>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up" style="--d:0.15s">
-        <div class="pc-num">02</div>
-        <div class="pc-body">
-          <div class="pc-header">
-            <h3>Cloud-Native End-to-End CI/CD Pipeline</h3>
-            <a href="#" class="pc-gh"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-          <p>Built a complete CI/CD pipeline from Git push to Kubernetes production deployment —
-             automated unit testing, SonarQube quality gates, Docker image builds, ECR push, and
-             zero-downtime rolling updates. Slack notifications at every stage for full team
-             visibility.</p>
-          <div class="pc-tags">
-            <span>Jenkins</span><span>SonarQube</span><span>Docker</span>
-            <span>Kubernetes</span><span>AWS ECR</span><span>Helm</span>
-          </div>
-        </div>
-        <div class="pc-metric">
-          <div class="pm-val">70%</div>
-          <div class="pm-lab">Faster Deploys</div>
-        </div>
-      </div>
-
-      <div class="proj-card fade-up" style="--d:0.2s">
-        <div class="pc-num">03</div>
-        <div class="pc-body">
-          <div class="pc-header">
-            <h3>Automated Monitoring &amp; Auto-Scaling System</h3>
-            <a href="#" class="pc-gh"><i class="fab fa-github"></i> GitHub</a>
-          </div>
-          <p>Self-healing infrastructure with Ansible for configuration management and AWS Lambda
-             for automated remediation. Prometheus collects real-time metrics, Grafana surfaces
-             insights, and AWS Auto Scaling dynamically adjusts capacity — cutting idle
-             infrastructure spend significantly.</p>
-          <div class="pc-tags">
-            <span>Ansible</span><span>AWS Lambda</span><span>Prometheus</span>
-            <span>Grafana</span><span>AWS ASG</span><span>CloudWatch</span>
-          </div>
-        </div>
-        <div class="pc-metric">
-          <div class="pm-val">40%</div>
-          <div class="pm-lab">Cost Reduction</div>
-        </div>
-      </div>
-
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="section">
-  <div class="container">
-    <p class="sec-label fade-up">Education</p>
-    <h2 class="sec-title fade-up" style="--d:0.05s">Academic Background</h2>
-
-    <div class="edu-grid">
-      <div class="edu-card fade-up" style="--d:0.1s">
-        <div class="edu-yr">2023 — 2025</div>
-        <div class="edu-body">
-          <span class="edu-badge">MCA</span>
-          <h3>Master of Computer Applications</h3>
-          <p class="edu-inst"><i class="fas fa-building-columns"></i> ABIT, Cuttack</p>
-          <div class="edu-grade">
-            <div class="eg-score"><span class="eg-num">8.88</span><span class="eg-denom">/ 10 CGPA</span></div>
-            <div class="grade-bar"><div class="grade-fill" style="--w:88.8%"></div></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="edu-card fade-up" style="--d:0.15s">
-        <div class="edu-yr">2019 — 2022</div>
-        <div class="edu-body">
-          <span class="edu-badge">B.Sc</span>
-          <h3>Bachelor's Degree</h3>
-          <p class="edu-inst"><i class="fas fa-building-columns"></i> Utkal University</p>
-          <div class="edu-grade">
-            <div class="eg-score"><span class="eg-num">7.0</span><span class="eg-denom">/ 10 CGPA</span></div>
-            <div class="grade-bar"><div class="grade-fill" style="--w:70%"></div></div>
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section alt">
-  <div class="container">
-    <p class="sec-label fade-up">Get In Touch</p>
-    <h2 class="sec-title fade-up" style="--d:0.05s">Let's Work Together</h2>
-
-    <div class="contact-wrap">
-      <div class="contact-left fade-up" style="--d:0.1s">
-        <p class="contact-intro">
-          I'm actively looking for DevOps / Cloud Engineer roles. If you're hiring or have an
-          interesting project in mind — I'd love to hear from you.
+        <p class="hero-description reveal-up" style="--d:0.45s">
+          Transforming ideas into scalable cloud architectures — specializing in
+          multi-cloud environments, container orchestration, and DevOps automation
+          to ship robust, production-ready solutions.
         </p>
 
+        <div class="hero-buttons reveal-up" style="--d:0.55s">
+          <a href="resume.pdf" download class="btn btn-primary magnetic">
+            <span class="btn-inner">
+              <i class="fas fa-download"></i> Download Resume
+            </span>
+          </a>
+          <a href="#projects" class="btn btn-ghost magnetic">
+            <span class="btn-inner">
+              <i class="fas fa-folder-open"></i> View Projects
+            </span>
+          </a>
+        </div>
+
+        <div class="social-links reveal-up" style="--d:0.65s">
+          <a href="https://github.com/Ranjit-08/" target="_blank" aria-label="GitHub" class="social-icon">
+            <i class="fab fa-github"></i>
+          </a>
+          <a href="https://www.linkedin.com/in/ranjit-k-samal" target="_blank" aria-label="LinkedIn" class="social-icon">
+            <i class="fab fa-linkedin"></i>
+          </a>
+          <a href="mailto:ranjitsamalarj@gmail.com" aria-label="Email" class="social-icon">
+            <i class="fas fa-envelope"></i>
+          </a>
+        </div>
+      </div>
+
+      <div class="hero-visual reveal-right" style="--d:0.3s">
+        <div class="profile-scene">
+
+          <!-- Outer orbit ring 1 -->
+          <div class="orbit orbit-1">
+            <div class="orbit-icon oi-aws"><i class="fab fa-aws"></i></div>
+          </div>
+
+          <!-- Outer orbit ring 2 -->
+          <div class="orbit orbit-2">
+            <div class="orbit-icon oi-docker"><i class="fab fa-docker"></i></div>
+          </div>
+
+          <!-- Inner orbit ring 3 -->
+          <div class="orbit orbit-3">
+            <div class="orbit-icon oi-k8s"><i class="fas fa-dharmachakra"></i></div>
+            <div class="orbit-icon oi-tf">TF</div>
+          </div>
+
+          <!-- Glow pulse rings -->
+          <div class="glow-ring gr-1"></div>
+          <div class="glow-ring gr-2"></div>
+          <div class="glow-ring gr-3"></div>
+
+          <!-- Main avatar circle -->
+          <div class="avatar-circle">
+            <div class="avatar-border-spin"></div>
+            <div class="avatar-inner">
+              <!--
+                TO USE YOUR REAL PHOTO:
+                Replace the SVG below with:
+                <img src="your-photo.jpg" alt="Ranjit Kumar Samal" style="width:100%;height:100%;object-fit:cover;border-radius:50%;">
+              -->
+              <svg viewBox="0 0 200 200" fill="none" xmlns="http://www.w3.org/2000/svg" class="avatar-svg">
+                <!-- Background circle fill -->
+                <circle cx="100" cy="100" r="100" fill="url(#bgFill)"/>
+                <!-- Subtle grid pattern -->
+                <rect x="0" y="0" width="200" height="200" fill="url(#gridPat)" opacity="0.15" rx="100"/>
+                <!-- Body / jacket -->
+                <path d="M30 200 C30 155 70 140 100 140 C130 140 170 155 170 200Z" fill="url(#bodyGrad)"/>
+                <!-- Collar left -->
+                <path d="M100 140 L82 160 L100 155Z" fill="url(#collarGrad)"/>
+                <!-- Collar right -->
+                <path d="M100 140 L118 160 L100 155Z" fill="url(#collarGrad)"/>
+                <!-- Neck -->
+                <rect x="90" y="118" width="20" height="26" rx="10" fill="url(#skinGrad)"/>
+                <!-- Head -->
+                <ellipse cx="100" cy="95" rx="34" ry="38" fill="url(#skinGrad)"/>
+                <!-- Hair -->
+                <path d="M66 88 C66 60 134 60 134 88 C134 75 126 62 100 60 C74 62 66 75 66 88Z" fill="url(#hairGrad)"/>
+                <!-- Eyes -->
+                <ellipse cx="88" cy="92" rx="5" ry="5.5" fill="#1a2540"/>
+                <ellipse cx="112" cy="92" rx="5" ry="5.5" fill="#1a2540"/>
+                <!-- Eye shine -->
+                <circle cx="90" cy="90" r="1.5" fill="white" opacity="0.9"/>
+                <circle cx="114" cy="90" r="1.5" fill="white" opacity="0.9"/>
+                <!-- Eyebrows -->
+                <path d="M82 84 Q88 81 94 84" stroke="#1a2540" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <path d="M106 84 Q112 81 118 84" stroke="#1a2540" stroke-width="2.5" stroke-linecap="round" fill="none"/>
+                <!-- Nose -->
+                <path d="M98 98 Q100 104 102 98" stroke="#c0956a" stroke-width="1.5" stroke-linecap="round" fill="none" opacity="0.6"/>
+                <!-- Smile -->
+                <path d="M90 108 Q100 115 110 108" stroke="#c0956a" stroke-width="2" stroke-linecap="round" fill="none"/>
+                <!-- Ear left -->
+                <ellipse cx="66" cy="96" rx="5" ry="7" fill="url(#skinGrad)"/>
+                <!-- Ear right -->
+                <ellipse cx="134" cy="96" rx="5" ry="7" fill="url(#skinGrad)"/>
+                <!-- Laptop hint at bottom -->
+                <rect x="58" y="168" width="84" height="6" rx="3" fill="url(#laptopGrad)" opacity="0.7"/>
+                <rect x="62" y="158" width="76" height="12" rx="3" fill="url(#laptopGrad)" opacity="0.5"/>
+
+                <defs>
+                  <radialGradient id="bgFill" cx="50%" cy="50%" r="50%">
+                    <stop offset="0%" stop-color="#0d1b35"/>
+                    <stop offset="100%" stop-color="#070b14"/>
+                  </radialGradient>
+                  <linearGradient id="bodyGrad" x1="100" y1="140" x2="100" y2="200" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#1e3a5f"/>
+                    <stop offset="100%" stop-color="#0d2040"/>
+                  </linearGradient>
+                  <linearGradient id="collarGrad" x1="0" y1="0" x2="0" y2="1">
+                    <stop offset="0%" stop-color="#e8f4fd"/>
+                    <stop offset="100%" stop-color="#bcd5ec"/>
+                  </linearGradient>
+                  <linearGradient id="skinGrad" x1="70" y1="60" x2="130" y2="140" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#d4956a"/>
+                    <stop offset="100%" stop-color="#b87040"/>
+                  </linearGradient>
+                  <linearGradient id="hairGrad" x1="100" y1="55" x2="100" y2="90" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#1a1008"/>
+                    <stop offset="100%" stop-color="#2d1e10"/>
+                  </linearGradient>
+                  <linearGradient id="laptopGrad" x1="58" y1="0" x2="142" y2="0" gradientUnits="userSpaceOnUse">
+                    <stop offset="0%" stop-color="#00d4ff" stop-opacity="0.6"/>
+                    <stop offset="100%" stop-color="#3b82f6" stop-opacity="0.6"/>
+                  </linearGradient>
+                  <pattern id="gridPat" width="20" height="20" patternUnits="userSpaceOnUse">
+                    <path d="M 20 0 L 0 0 0 20" fill="none" stroke="#00d4ff" stroke-width="0.4"/>
+                  </pattern>
+                </defs>
+              </svg>
+
+              <!-- Cyan glow at base -->
+              <div class="avatar-glow-base"></div>
+            </div>
+
+            <!-- Status badge -->
+            <div class="avatar-status">
+              <span class="live-dot"></span>
+              Available
+            </div>
+          </div>
+
+          <!-- Floating info cards -->
+          <div class="info-card ic-top">
+            <span class="ic-icon"><i class="fas fa-cloud"></i></span>
+            <div>
+              <div class="ic-val">3 Clouds</div>
+              <div class="ic-lab">AWS · Azure · GCP</div>
+            </div>
+          </div>
+          <div class="info-card ic-bottom">
+            <span class="ic-icon"><i class="fas fa-code-branch"></i></span>
+            <div>
+              <div class="ic-val">20+ Projects</div>
+              <div class="ic-lab">Shipped to Production</div>
+            </div>
+          </div>
+
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <!-- Scroll indicator -->
+  <div class="scroll-indicator">
+    <div class="scroll-line"></div>
+    <span>scroll</span>
+  </div>
+</section>
+
+<!-- About Section -->
+<section id="about" class="about-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag reveal-up">// WHO I AM</span>
+      <h2 class="section-title reveal-up" style="--d:0.1s">About Me</h2>
+    </div>
+
+    <div class="about-grid">
+      <div class="about-text reveal-up" style="--d:0.2s">
+        <p>I'm a passionate <strong>Multi-Cloud DevOps Engineer</strong> with extensive hands-on experience
+          in designing, implementing, and managing cloud infrastructure across AWS, Azure, and GCP.</p>
+        <p>My expertise spans container orchestration with Kubernetes to building robust CI/CD pipelines
+          that help teams ship software faster and more reliably. I believe in Infrastructure as Code
+          principles and an automation-first approach to eliminate manual processes.</p>
+        <p>Currently focused on cloud-native architectures, serverless computing, and implementing
+          <strong>DevSecOps practices</strong> to build secure, scalable, and resilient systems.</p>
+
+        <div class="terminal-block">
+          <span class="t-prompt">ranjit@devops</span><span class="t-sep">:</span><span class="t-path">~</span><span class="t-dollar">$</span>
+          <span class="t-cmd"> cat expertise.txt</span>
+          <div class="t-output">AWS | Azure | GCP | Kubernetes | Terraform | Docker</div>
+        </div>
+      </div>
+
+      <div class="about-stats reveal-up" style="--d:0.3s">
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-cloud"></i></div>
+          <div class="stat-num" data-count="3">0</div>
+          <div class="stat-label">Cloud Platforms</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-tools"></i></div>
+          <div class="stat-num" data-count="15">0</div>
+          <div class="stat-label">DevOps Tools</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-rocket"></i></div>
+          <div class="stat-num" data-count="20">0</div>
+          <div class="stat-label">Projects Built</div>
+        </div>
+        <div class="stat-card">
+          <div class="stat-icon"><i class="fas fa-graduation-cap"></i></div>
+          <div class="stat-num" data-count="8" data-suffix=".88">0</div>
+          <div class="stat-label">MCA CGPA</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Skills Section -->
+<section id="skills" class="skills-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag reveal-up">// WHAT I KNOW</span>
+      <h2 class="section-title reveal-up" style="--d:0.1s">Technical Stack</h2>
+    </div>
+
+    <div class="skills-grid">
+      <div class="skill-card reveal-up" style="--d:0.1s">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="fas fa-cloud"></i></div>
+          <h3>Cloud Platforms</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="tag"><i class="fab fa-aws"></i> AWS</span>
+          <span class="tag"><i class="fab fa-microsoft"></i> Azure</span>
+          <span class="tag"><i class="fab fa-google"></i> GCP</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--d:0.2s">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="fas fa-code-branch"></i></div>
+          <h3>CI/CD & DevOps</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Jenkins</span>
+          <span class="tag">GitHub Actions</span>
+          <span class="tag">GitLab CI/CD</span>
+          <span class="tag">ArgoCD</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--d:0.3s">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="fas fa-ship"></i></div>
+          <h3>Containers & Orchestration</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="tag"><i class="fab fa-docker"></i> Docker</span>
+          <span class="tag">Kubernetes</span>
+          <span class="tag">Helm</span>
+          <span class="tag">Docker Compose</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--d:0.4s">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="fas fa-layer-group"></i></div>
+          <h3>Infrastructure as Code</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Terraform</span>
+          <span class="tag">OpenTofu</span>
+          <span class="tag">Ansible</span>
+          <span class="tag">CloudFormation</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--d:0.5s">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="fas fa-chart-line"></i></div>
+          <h3>Monitoring & Observability</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">Prometheus</span>
+          <span class="tag">Grafana</span>
+          <span class="tag">CloudWatch</span>
+          <span class="tag">ELK Stack</span>
+        </div>
+      </div>
+
+      <div class="skill-card reveal-up" style="--d:0.6s">
+        <div class="skill-card-header">
+          <div class="skill-icon"><i class="fas fa-shield-halved"></i></div>
+          <h3>Security & Networking</h3>
+        </div>
+        <div class="skill-tags">
+          <span class="tag">IAM</span>
+          <span class="tag">VPC</span>
+          <span class="tag">SSL/TLS</span>
+          <span class="tag">DevSecOps</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Projects Section -->
+<section id="projects" class="projects-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag reveal-up">// WHAT I'VE BUILT</span>
+      <h2 class="section-title reveal-up" style="--d:0.1s">Featured Projects</h2>
+    </div>
+
+    <div class="projects-grid">
+
+      <div class="project-card reveal-up" style="--d:0.1s">
+        <div class="project-number">01</div>
+        <div class="project-header">
+          <div class="project-icon">
+            <i class="fas fa-music"></i>
+          </div>
+          <div class="project-links">
+            <a href="#" target="_blank" title="GitHub"><i class="fab fa-github"></i></a>
+            <a href="#" target="_blank" title="Live"><i class="fas fa-arrow-up-right-from-square"></i></a>
+          </div>
+        </div>
+        <h3 class="project-title">Three-Tier Music Streaming Platform</h3>
+        <p class="project-desc">
+          Architected a secure, scalable music streaming application with OTP-based authentication,
+          role-based access control, and cloud-native infrastructure. Implemented microservices
+          with S3 media storage and RDS for data persistence.
+        </p>
+        <div class="project-tech">
+          <span>AWS EC2</span><span>S3</span><span>RDS</span>
+          <span>Docker</span><span>NGINX</span><span>CI/CD</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-status">
+            <span class="status-badge live"><span></span>Production</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal-up" style="--d:0.2s">
+        <div class="project-number">02</div>
+        <div class="project-header">
+          <div class="project-icon"><i class="fas fa-rocket"></i></div>
+          <div class="project-links">
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <h3 class="project-title">Cloud-Native DevOps Pipeline</h3>
+        <p class="project-desc">
+          Designed and implemented end-to-end CI/CD pipeline with automated testing,
+          containerization, and Kubernetes deployment. Achieved <strong>70% reduction</strong> in
+          deployment time with zero-downtime rolling updates.
+        </p>
+        <div class="project-tech">
+          <span>Jenkins</span><span>SonarQube</span>
+          <span>Docker</span><span>Kubernetes</span><span>AWS ECR</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-metric">
+            <span class="metric-val">70%</span>
+            <span class="metric-lab">faster deploys</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="project-card reveal-up" style="--d:0.3s">
+        <div class="project-number">03</div>
+        <div class="project-header">
+          <div class="project-icon"><i class="fas fa-chart-area"></i></div>
+          <div class="project-links">
+            <a href="#" target="_blank"><i class="fab fa-github"></i></a>
+          </div>
+        </div>
+        <h3 class="project-title">Automated Monitoring & Auto-Scaling</h3>
+        <p class="project-desc">
+          Built an intelligent monitoring solution with automated alerting and self-healing
+          capabilities. Integrated with AWS Auto Scaling Groups for dynamic resource
+          management based on real-time metrics.
+        </p>
+        <div class="project-tech">
+          <span>Ansible</span><span>Lambda</span>
+          <span>Prometheus</span><span>Grafana</span><span>AWS ASG</span>
+        </div>
+        <div class="project-footer">
+          <div class="project-metric">
+            <span class="metric-val">99.9%</span>
+            <span class="metric-lab">uptime achieved</span>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Education Section -->
+<section id="education" class="education-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag reveal-up">// MY JOURNEY</span>
+      <h2 class="section-title reveal-up" style="--d:0.1s">Education</h2>
+    </div>
+
+    <div class="timeline">
+      <div class="timeline-item reveal-up" style="--d:0.1s">
+        <div class="tl-year">2023 — 2025</div>
+        <div class="tl-content">
+          <div class="tl-top">
+            <div class="tl-dot"></div>
+            <span class="tl-badge">MCA</span>
+          </div>
+          <h3>Master of Computer Applications</h3>
+          <p class="tl-inst"><i class="fas fa-building-columns"></i> ABIT, Cuttack</p>
+          <div class="tl-grade">
+            <span class="grade-label">CGPA</span>
+            <span class="grade-val">8.88 / 10</span>
+            <div class="grade-bar">
+              <div class="grade-fill" style="--w: 88.8%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-item reveal-up" style="--d:0.2s">
+        <div class="tl-year">2019 — 2022</div>
+        <div class="tl-content">
+          <div class="tl-top">
+            <div class="tl-dot"></div>
+            <span class="tl-badge">B.Sc</span>
+          </div>
+          <h3>Bachelor's Degree</h3>
+          <p class="tl-inst"><i class="fas fa-building-columns"></i> Utkal University</p>
+          <div class="tl-grade">
+            <span class="grade-label">CGPA</span>
+            <span class="grade-val">7.0 / 10</span>
+            <div class="grade-bar">
+              <div class="grade-fill" style="--w: 70%"></div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Contact Section -->
+<section id="contact" class="contact-section">
+  <div class="container">
+    <div class="section-header">
+      <span class="section-tag reveal-up">// LET'S CONNECT</span>
+      <h2 class="section-title reveal-up" style="--d:0.1s">Get In Touch</h2>
+    </div>
+
+    <div class="contact-wrap reveal-up" style="--d:0.2s">
+      <div class="contact-left">
+        <p class="contact-lead">
+          I'm currently looking for new opportunities. Whether you have a question,
+          a project in mind, or just want to say hi — my inbox is always open!
+        </p>
         <div class="contact-links">
-          <a href="mailto:ranjitsamalarj@gmail.com" class="cl-row">
-            <div class="cl-ico"><i class="fas fa-envelope"></i></div>
-            <div class="cl-info">
+          <a href="mailto:ranjitsamalarj@gmail.com" class="contact-link">
+            <div class="cl-icon"><i class="fas fa-envelope"></i></div>
+            <div class="cl-text">
               <span class="cl-label">Email</span>
               <span class="cl-val">ranjitsamalarj@gmail.com</span>
             </div>
-            <i class="fas fa-arrow-up-right-from-square cl-ext"></i>
           </a>
-          <a href="tel:+916370224907" class="cl-row">
-            <div class="cl-ico"><i class="fas fa-phone"></i></div>
-            <div class="cl-info">
+          <a href="tel:+916370224907" class="contact-link">
+            <div class="cl-icon"><i class="fas fa-phone"></i></div>
+            <div class="cl-text">
               <span class="cl-label">Phone</span>
               <span class="cl-val">+91 6370224907</span>
             </div>
-            <i class="fas fa-arrow-up-right-from-square cl-ext"></i>
           </a>
-          <a href="https://www.linkedin.com/in/ranjit-k-samal" target="_blank" class="cl-row">
-            <div class="cl-ico"><i class="fab fa-linkedin"></i></div>
-            <div class="cl-info">
-              <span class="cl-label">LinkedIn</span>
-              <span class="cl-val">linkedin.com/in/ranjit-k-samal</span>
+          <div class="contact-link">
+            <div class="cl-icon"><i class="fas fa-location-dot"></i></div>
+            <div class="cl-text">
+              <span class="cl-label">Location</span>
+              <span class="cl-val">Hyderabad, India · Open to Remote</span>
             </div>
-            <i class="fas fa-arrow-up-right-from-square cl-ext"></i>
+          </div>
+        </div>
+        <div class="contact-socials">
+          <a href="https://github.com/Ranjit-08/" target="_blank" class="social-btn">
+            <i class="fab fa-github"></i> GitHub
           </a>
-          <a href="https://github.com/Ranjit-08/" target="_blank" class="cl-row">
-            <div class="cl-ico"><i class="fab fa-github"></i></div>
-            <div class="cl-info">
-              <span class="cl-label">GitHub</span>
-              <span class="cl-val">github.com/Ranjit-08</span>
-            </div>
-            <i class="fas fa-arrow-up-right-from-square cl-ext"></i>
+          <a href="https://www.linkedin.com/in/ranjit-k-samal" target="_blank" class="social-btn">
+            <i class="fab fa-linkedin"></i> LinkedIn
           </a>
         </div>
       </div>
 
-      <div class="contact-right fade-up" style="--d:0.2s">
-        <div class="resume-card">
-          <div class="rc-head">
-            <div class="rc-ico"><i class="fas fa-file-lines"></i></div>
-            <div>
-              <div class="rc-name">Resume / CV</div>
-              <div class="rc-sub">Multi-Cloud DevOps Engineer</div>
-            </div>
-          </div>
-          <p class="rc-desc">
-            Full resume including project details, technical skills, education,
-            and contact info — ready to forward to your hiring team.
-          </p>
-          <a href="Resume.pdf" download class="btn-primary w-full">
-            <i class="fas fa-download"></i> Download Resume (PDF)
+      <div class="contact-right">
+        <div class="cta-card">
+          <div class="cta-glow"></div>
+          <div class="cta-icon"><i class="fas fa-paper-plane"></i></div>
+          <h3>Say Hello!</h3>
+          <p>Open to full-time roles, freelance projects, and interesting collaborations.</p>
+          <a href="mailto:ranjitsamalarj@gmail.com" class="btn btn-primary magnetic">
+            <span class="btn-inner">
+              <i class="fas fa-envelope"></i> Send Message
+            </span>
           </a>
-          <a href="mailto:ranjitsamalarj@gmail.com" class="btn-outline w-full" style="margin-top:0.75rem;">
-            <i class="fas fa-paper-plane"></i> Send a Message
+          <a href="Resume.pdf" download class="btn btn-ghost magnetic" style="margin-top:0.75rem">
+            <span class="btn-inner">
+              <i class="fas fa-download"></i> Download Resume
+            </span>
           </a>
         </div>
       </div>
@@ -458,76 +605,243 @@
   </div>
 </section>
 
-<!-- FOOTER -->
+<!-- Footer -->
 <footer class="footer">
-  <div class="container">
-    <div class="footer-row">
-      <div>
-        <div class="footer-name">Ranjit Kumar Samal</div>
-        <div class="footer-role">Multi-Cloud DevOps Engineer · Hyderabad, India</div>
-      </div>
-      <div class="footer-links">
-        <a href="https://github.com/Ranjit-08/" target="_blank"><i class="fab fa-github"></i></a>
-        <a href="https://www.linkedin.com/in/ranjit-k-samal" target="_blank"><i class="fab fa-linkedin"></i></a>
-        <a href="mailto:ranjitsamalarj@gmail.com"><i class="fas fa-envelope"></i></a>
-        <a href="Resume.pdf" download class="f-resume-btn"><i class="fas fa-download"></i> Resume</a>
+  <div class="footer-inner">
+    <div class="footer-logo">
+      <div class="footer-avatar">
+        <svg viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <circle cx="20" cy="14" r="7" fill="url(#footGrad)"/>
+          <path d="M6 40 C6 30 34 30 34 40" fill="url(#footGrad)" opacity="0.8"/>
+          <defs>
+            <linearGradient id="footGrad" x1="0" y1="0" x2="40" y2="40" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#00d4ff"/>
+              <stop offset="100%" stop-color="#3b82f6"/>
+            </linearGradient>
+          </defs>
+        </svg>
       </div>
     </div>
-    <div class="footer-bottom">
-      <span>© 2025 Ranjit Kumar Samal. All rights reserved.</span>
-      <a href="#home" class="back-top"><i class="fas fa-arrow-up"></i> Back to top</a>
+    <p class="footer-copy">Designed & Built by <strong>Ranjit Kumar Samal</strong> · © 2025</p>
+    <div class="footer-back">
+      <a href="#home" class="back-top" title="Back to top">
+        <i class="fas fa-arrow-up"></i>
+      </a>
     </div>
   </div>
 </footer>
 
 <script>
-/* SCROLL REVEAL */
-const obs = new IntersectionObserver(entries => {
-  entries.forEach(e => { if (e.isIntersecting) { e.target.classList.add('visible'); obs.unobserve(e.target); } });
-}, { threshold: 0.1 });
-document.querySelectorAll('.fade-up').forEach(el => obs.observe(el));
+/* ===== PARTICLE CANVAS ===== */
+const canvas = document.getElementById('particleCanvas');
+const ctx = canvas.getContext('2d');
+let particles = [];
+let mouse = { x: null, y: null };
 
-/* COUNTERS */
-const cobs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      const el = e.target, target = +el.dataset.count;
-      let cur = 0; const step = target / 35;
-      const t = setInterval(() => { cur = Math.min(cur + step, target); el.textContent = Math.floor(cur); if (cur >= target) clearInterval(t); }, 40);
-      cobs.unobserve(el);
-    }
+function resize() {
+  canvas.width = window.innerWidth;
+  canvas.height = window.innerHeight;
+}
+resize();
+window.addEventListener('resize', () => { resize(); initParticles(); });
+
+function Particle() {
+  this.x = Math.random() * canvas.width;
+  this.y = Math.random() * canvas.height;
+  this.vx = (Math.random() - 0.5) * 0.3;
+  this.vy = (Math.random() - 0.5) * 0.3;
+  this.size = Math.random() * 1.5 + 0.5;
+  this.opacity = Math.random() * 0.5 + 0.1;
+}
+
+function initParticles() {
+  particles = [];
+  const count = Math.min(Math.floor((canvas.width * canvas.height) / 12000), 120);
+  for (let i = 0; i < count; i++) particles.push(new Particle());
+}
+initParticles();
+
+function drawParticles() {
+  ctx.clearRect(0, 0, canvas.width, canvas.height);
+  particles.forEach(p => {
+    p.x += p.vx;
+    p.y += p.vy;
+    if (p.x < 0 || p.x > canvas.width) p.vx *= -1;
+    if (p.y < 0 || p.y > canvas.height) p.vy *= -1;
+
+    ctx.beginPath();
+    ctx.arc(p.x, p.y, p.size, 0, Math.PI * 2);
+    ctx.fillStyle = `rgba(0, 212, 255, ${p.opacity})`;
+    ctx.fill();
   });
-}, { threshold: 0.6 });
-document.querySelectorAll('.ps-num').forEach(el => cobs.observe(el));
 
-/* GRADE BARS */
-const gobs = new IntersectionObserver(entries => {
-  entries.forEach(e => {
-    if (e.isIntersecting) {
-      e.target.style.width = getComputedStyle(e.target).getPropertyValue('--w').trim();
-      gobs.unobserve(e.target);
+  // Draw lines between nearby particles
+  for (let i = 0; i < particles.length; i++) {
+    for (let j = i + 1; j < particles.length; j++) {
+      const dx = particles[i].x - particles[j].x;
+      const dy = particles[i].y - particles[j].y;
+      const dist = Math.sqrt(dx * dx + dy * dy);
+      if (dist < 120) {
+        ctx.beginPath();
+        ctx.strokeStyle = `rgba(0, 212, 255, ${0.08 * (1 - dist / 120)})`;
+        ctx.lineWidth = 0.5;
+        ctx.moveTo(particles[i].x, particles[i].y);
+        ctx.lineTo(particles[j].x, particles[j].y);
+        ctx.stroke();
+      }
     }
-  });
-}, { threshold: 0.4 });
-document.querySelectorAll('.grade-fill').forEach(el => gobs.observe(el));
+  }
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
 
-/* NAVBAR */
-window.addEventListener('scroll', () => {
-  document.getElementById('navbar').classList.toggle('scrolled', window.scrollY > 50);
+/* ===== CUSTOM CURSOR ===== */
+const dot = document.querySelector('.cursor-dot');
+const ring = document.querySelector('.cursor-ring');
+let ringX = 0, ringY = 0, dotX = 0, dotY = 0;
+
+document.addEventListener('mousemove', e => {
+  dotX = e.clientX; dotY = e.clientY;
+  dot.style.transform = `translate(${dotX - 4}px, ${dotY - 4}px)`;
 });
 
-/* HAMBURGER */
+function animateRing() {
+  ringX += (dotX - ringX) * 0.12;
+  ringY += (dotY - ringY) * 0.12;
+  ring.style.transform = `translate(${ringX - 18}px, ${ringY - 18}px)`;
+  requestAnimationFrame(animateRing);
+}
+animateRing();
+
+document.querySelectorAll('a, button, .magnetic, .skill-card, .project-card').forEach(el => {
+  el.addEventListener('mouseenter', () => {
+    ring.style.transform += ' scale(1.5)';
+    ring.style.borderColor = 'rgba(0,212,255,0.8)';
+    dot.style.background = '#00d4ff';
+  });
+  el.addEventListener('mouseleave', () => {
+    ring.style.borderColor = 'rgba(0,212,255,0.4)';
+    dot.style.background = '#00d4ff';
+  });
+});
+
+/* ===== TYPING EFFECT ===== */
+const phrases = [
+  "Multi-Cloud DevOps Engineer",
+  "AWS | Azure | GCP Specialist",
+  "Kubernetes & Docker Expert",
+  "CI/CD Pipeline Architect",
+  "Infrastructure as Code Dev"
+];
+let pIdx = 0, lIdx = 0, deleting = false;
+const el = document.querySelector('.typing');
+
+function typeWriter() {
+  const phrase = phrases[pIdx];
+  if (deleting) {
+    lIdx--;
+    el.textContent = phrase.substring(0, lIdx);
+  } else {
+    lIdx++;
+    el.textContent = phrase.substring(0, lIdx);
+  }
+  let speed = deleting ? 45 : 90;
+  if (!deleting && lIdx === phrase.length) { speed = 2200; deleting = true; }
+  else if (deleting && lIdx === 0) { deleting = false; pIdx = (pIdx + 1) % phrases.length; speed = 400; }
+  setTimeout(typeWriter, speed);
+}
+typeWriter();
+
+/* ===== NAVBAR SCROLL ===== */
+window.addEventListener('scroll', () => {
+  const nav = document.getElementById('navbar');
+  nav.classList.toggle('scrolled', window.scrollY > 60);
+});
+
+/* ===== HAMBURGER ===== */
 const burger = document.getElementById('hamburger');
 const menu = document.getElementById('navMenu');
-burger.addEventListener('click', () => { burger.classList.toggle('active'); menu.classList.toggle('open'); });
-document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => { burger.classList.remove('active'); menu.classList.remove('open'); }));
+burger.addEventListener('click', () => {
+  burger.classList.toggle('active');
+  menu.classList.toggle('open');
+});
+document.querySelectorAll('.nav-link').forEach(l => l.addEventListener('click', () => {
+  burger.classList.remove('active');
+  menu.classList.remove('open');
+}));
 
-/* SMOOTH SCROLL */
+/* ===== SCROLL REVEAL ===== */
+const observer = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.classList.add('visible');
+      observer.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.12 });
+
+document.querySelectorAll('.reveal-up, .reveal-right').forEach(el => observer.observe(el));
+
+/* ===== COUNTER ANIMATION ===== */
+const counterObserver = new IntersectionObserver((entries) => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      const el = entry.target;
+      const target = parseInt(el.dataset.count);
+      const suffix = el.dataset.suffix || '+';
+      let current = 0;
+      const step = target / 40;
+      const timer = setInterval(() => {
+        current = Math.min(current + step, target);
+        el.textContent = Math.floor(current) + suffix;
+        if (current >= target) clearInterval(timer);
+      }, 40);
+      counterObserver.unobserve(el);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.stat-num').forEach(el => counterObserver.observe(el));
+
+/* ===== GRADE BAR ANIMATION ===== */
+const gradeObserver = new IntersectionObserver((entries) => {
+  entries.forEach(e => {
+    if (e.isIntersecting) {
+      e.target.style.width = e.target.style.getPropertyValue('--w') || '0%';
+      gradeObserver.unobserve(e.target);
+    }
+  });
+}, { threshold: 0.5 });
+document.querySelectorAll('.grade-fill').forEach(el => gradeObserver.observe(el));
+
+/* ===== MAGNETIC BUTTONS ===== */
+document.querySelectorAll('.magnetic').forEach(btn => {
+  btn.addEventListener('mousemove', function(e) {
+    const rect = this.getBoundingClientRect();
+    const x = (e.clientX - rect.left - rect.width / 2) * 0.25;
+    const y = (e.clientY - rect.top - rect.height / 2) * 0.25;
+    this.style.transform = `translate(${x}px, ${y}px)`;
+  });
+  btn.addEventListener('mouseleave', function() {
+    this.style.transform = '';
+  });
+});
+
+/* ===== SMOOTH SCROLL ===== */
 document.querySelectorAll('a[href^="#"]').forEach(a => {
   a.addEventListener('click', function(e) {
     e.preventDefault();
     const t = document.querySelector(this.getAttribute('href'));
     if (t) t.scrollIntoView({ behavior: 'smooth', block: 'start' });
+  });
+});
+
+/* ===== FLOATING BADGES PARALLAX ===== */
+window.addEventListener('scroll', () => {
+  const scrollY = window.scrollY;
+  const badges = document.querySelectorAll('.float-badge');
+  badges.forEach((b, i) => {
+    const speed = 0.05 + i * 0.02;
+    b.style.transform = `translateY(${scrollY * speed}px)`;
   });
 });
 </script>
