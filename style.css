@@ -1,343 +1,93 @@
-/* =========================================================
-   RANJIT KUMAR SAMAL — PORTFOLIO (FINAL FIXED VERSION)
-========================================================= */
+/* =====================================================
+   CRITICAL LAYOUT FIX (Laptop + Desktop Stable)
+===================================================== */
 
-/* -------------------- DESIGN TOKENS -------------------- */
-:root {
-  --blue:#4f8ef7;
-  --blue-d:#3675e0;
-  --blue-bg:rgba(79,142,247,.1);
-  --blue-bdr:rgba(79,142,247,.28);
-  --green:#22c55e;
-  --purple:#a78bfa;
-
-  --radius:16px;
-  --radius-sm:8px;
-
-  --font:'Inter',system-ui,-apple-system,sans-serif;
-  --mono:'JetBrains Mono',monospace;
+/* Prevent layout shift */
+.hero {
+  padding-top: 110px !important;
+  padding-bottom: 80px !important;
+  min-height: auto !important;
+  display: block !important;
 }
 
-/* -------------------- THEMES -------------------- */
-[data-theme="dark"]{
-  --bg:#0b1120;
-  --bg2:#101827;
-  --card:#19253a;
-  --hover:#1f2f47;
-  --border:rgba(255,255,255,.08);
-  --t1:#f0f5ff;
-  --t2:#8a9ab6;
-  --t3:#485670;
+/* Fix hero grid alignment */
+.hero-grid {
+  display: grid !important;
+  grid-template-columns: 1fr !important;
+  gap: 60px !important;
+  align-items: center !important;
 }
 
-[data-theme="light"]{
-  --bg:#f5f7fc;
-  --bg2:#eef1f8;
-  --card:#ffffff;
-  --hover:#edf2ff;
-  --border:rgba(0,0,0,.08);
-  --t1:#0f1929;
-  --t2:#4a5a78;
-  --t3:#8a9ab6;
-}
-
-/* -------------------- RESET -------------------- */
-*,
-*::before,
-*::after{
-  margin:0;
-  padding:0;
-  box-sizing:border-box;
-}
-
-html,body{
-  width:100%;
-  overflow-x:hidden;
-}
-
-body{
-  font-family:var(--font);
-  background:var(--bg);
-  color:var(--t1);
-  line-height:1.6;
-  transition:.3s;
-}
-
-img{
-  max-width:100%;
-  height:auto;
-  display:block;
-}
-
-/* -------------------- CONTAINER -------------------- */
-.container{
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 1.5rem;
-}
-
-/* -------------------- HEADER -------------------- */
-.header{
-  position:fixed;
-  top:0;
-  left:0;
-  right:0;
-  height:70px;
-  z-index:100;
-  backdrop-filter:blur(10px);
-  border-bottom:1px solid transparent;
-}
-
-.header.scrolled{
-  background:var(--bg);
-  border-bottom:1px solid var(--border);
-}
-
-.header-inner{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  height:100%;
-  max-width:1200px;
-  margin:0 auto;
-  padding:0 1.5rem;
-}
-
-/* -------------------- HERO -------------------- */
-.hero{
-  padding-top:140px;
-  padding-bottom:120px;
-  min-height:100vh;
-  display:flex;
-  align-items:center;
-  background:linear-gradient(
-    135deg,
-    #0b1120 0%,
-    #0f1b33 50%,
-    #0b1120 100%
-  );
-}
-
-.hero-grid{
-  display:grid;
-  gap:3rem;
-  grid-template-columns:1fr;
-  align-items:center;
-}
-
-/* Desktop layout fix */
-@media(min-width:1024px){
-  .hero-grid{
-    grid-template-columns:1.2fr 0.8fr;
-    gap:4rem;
+/* Desktop layout */
+@media (min-width: 1024px) {
+  .hero-grid {
+    grid-template-columns: 1.1fr 0.9fr !important;
   }
 }
 
-/* -------------------- HERO TEXT -------------------- */
-.hero-text{
-  max-width:650px;
+/* Left column fix */
+.hero-text {
+  max-width: 640px;
 }
 
-.hero-h1{
-  font-size:clamp(2.8rem,5vw,4rem);
-  font-weight:800;
-  line-height:1.05;
-  margin-bottom:1rem;
+/* Right column fix */
+.profile-card {
+  max-width: 400px;
+  width: 100%;
+  margin-left: auto;
+  margin-right: 0;
 }
 
-.gradient-name{
-  background:linear-gradient(120deg,var(--blue),#7bb3ff,var(--purple));
-  -webkit-background-clip:text;
-  -webkit-text-fill-color:transparent;
+/* Remove extra stretching */
+.hero .container {
+  display: block;
 }
 
-.hero-role{
-  font-family:var(--mono);
-  font-size:.9rem;
-  color:var(--t2);
-  margin-bottom:1.5rem;
+/* Fix reveal animation causing jump */
+.reveal {
+  opacity: 1 !important;
+  transform: none !important;
 }
 
-.hero-bio{
-  font-size:1.05rem;
-  color:var(--t2);
-  margin-bottom:2rem;
-  line-height:1.8;
+/* Fix meta spacing */
+.hero-meta {
+  margin-top: 18px;
+  font-size: 14px;
+  color: var(--t2);
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
 }
 
-/* -------------------- BUTTONS -------------------- */
-.btn-primary{
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  padding:.9rem 1.6rem;
-  background:var(--blue);
-  color:#fff;
-  font-weight:700;
-  border-radius:var(--radius-sm);
-  transition:.25s;
+/* Fix socials spacing */
+.hero-socials {
+  margin-top: 20px;
+  display: flex;
+  gap: 12px;
+  flex-wrap: wrap;
 }
 
-.btn-primary:hover{
-  background:var(--blue-d);
-  transform:translateY(-3px);
+/* Fix CTA alignment */
+.hero-cta {
+  display: flex;
+  gap: 15px;
+  flex-wrap: wrap;
+  margin-top: 20px;
 }
 
-.btn-ghost{
-  display:inline-flex;
-  align-items:center;
-  gap:.5rem;
-  padding:.9rem 1.6rem;
-  border:1px solid var(--border);
-  border-radius:var(--radius-sm);
-  transition:.25s;
+/* Remove blank extra vertical space */
+.section {
+  padding: 80px 0 !important;
 }
 
-.btn-ghost:hover{
-  background:var(--hover);
+/* Make sure nothing overflows */
+body {
+  overflow-x: hidden !important;
 }
 
-/* -------------------- PROFILE CARD -------------------- */
-.profile-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:2rem;
-  box-shadow:0 20px 60px rgba(0,0,0,.35);
-  width:100%;
-  max-width:420px;
-  margin-left:auto;
-  text-align:center;
-}
-
-.pc-photo{
-  width:160px;
-  height:160px;
-  border-radius:50%;
-  object-fit:cover;
-  margin:0 auto 1.5rem;
-  border:4px solid var(--blue-bdr);
-}
-
-.pc-stat-n{
-  font-size:1.6rem;
-  font-weight:800;
-  color:var(--blue);
-}
-
-.pc-stat-l{
-  font-size:.75rem;
-  color:var(--t3);
-}
-
-/* -------------------- SECTIONS -------------------- */
-.section{
-  padding:100px 0;
-}
-
-.alt-section{
-  background:var(--bg2);
-}
-
-.sec-title{
-  font-size:2.2rem;
-  font-weight:800;
-  margin-bottom:2rem;
-}
-
-/* -------------------- GRID FIXES -------------------- */
-.skills-grid{
-  display:grid;
-  gap:1.5rem;
-}
-
-@media(min-width:768px){
-  .skills-grid{
-    grid-template-columns:repeat(3,1fr);
-  }
-}
-
-.skill-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:1.5rem;
-  transition:.3s;
-}
-
-.skill-card:hover{
-  transform:translateY(-6px);
-  border-color:var(--blue-bdr);
-}
-
-.proj{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:2rem;
-  margin-bottom:1.5rem;
-  transition:.3s;
-}
-
-.proj:hover{
-  transform:translateY(-6px);
-  border-color:var(--blue-bdr);
-}
-
-.edu-grid{
-  display:grid;
-  gap:1.5rem;
-}
-
-@media(min-width:768px){
-  .edu-grid{
-    grid-template-columns:1fr 1fr;
-  }
-}
-
-.edu-card{
-  background:var(--card);
-  border:1px solid var(--border);
-  border-radius:var(--radius);
-  padding:2rem;
-}
-
-.contact-grid{
-  display:grid;
-  gap:2rem;
-}
-
-@media(min-width:1024px){
-  .contact-grid{
-    grid-template-columns:1fr 400px;
-  }
-}
-
-/* -------------------- FOOTER -------------------- */
-.footer{
-  background:var(--bg2);
-  padding:3rem 0;
-  text-align:center;
-  border-top:1px solid var(--border);
-}
-
-/* -------------------- MOBILE FIX -------------------- */
-@media(max-width:768px){
-  .hero{
-    padding-top:120px;
-  }
-
-  .hero-grid{
-    text-align:center;
-  }
-
-  .profile-card{
-    margin:0 auto;
-  }
-
-  .btn-primary,
-  .btn-ghost{
-    width:100%;
-    justify-content:center;
+/* Fix laptop spacing */
+@media (min-width: 1200px) {
+  .hero {
+    padding-top: 130px !important;
   }
 }
