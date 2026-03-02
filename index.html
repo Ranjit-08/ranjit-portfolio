@@ -4,17 +4,17 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Ranjit Kumar Samal | Multi-Cloud DevOps Engineer</title>
+<title>Ranjit Kumar Samal | DevOps Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
-
 </head>
+
 <body>
 
-<header class="header">
+<header>
   <div class="container nav">
-    <div class="logo">Ranjit Kumar Samal</div>
+    <div class="logo">RANJIT KUMAR SAMAL</div>
     <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
@@ -27,66 +27,45 @@
 
 <section class="hero">
   <div class="container">
-    <h1>
-      Designing Reliable <span>Cloud & DevOps Systems</span>
-    </h1>
+    <h1>Multi-Cloud DevOps Engineer</h1>
     <p>
-      Multi-Cloud DevOps Engineer specializing in scalable infrastructure, CI/CD automation,
-      container orchestration and production-grade cloud architectures across AWS, Azure & GCP.
+      Designing scalable, automated and production-ready cloud infrastructure
+      across AWS, Azure and GCP.
     </p>
-    <div class="hero-buttons">
+    <div class="buttons">
       <a href="#contact" class="btn primary">Hire Me</a>
-      <a href="Resume.pdf" download class="btn secondary">Download Resume</a>
+      <a href="Resume.pdf" download class="btn outline">Download Resume</a>
     </div>
   </div>
 </section>
 
 <section id="about" class="section">
   <div class="container">
-    <h2>Profile Summary</h2>
+    <h2>Profile</h2>
     <p>
-      Results-driven Multi-Cloud DevOps Engineer with hands-on experience designing,
-      automating, and managing cloud-native infrastructure. Strong expertise in Linux,
-      CI/CD pipelines, containerization (Docker, Kubernetes), Infrastructure as Code (Terraform),
-      monitoring, and production reliability. Passionate about building secure, scalable,
-      and highly available distributed systems.
+      Multi-Cloud DevOps Engineer with hands-on expertise in CI/CD automation,
+      Kubernetes orchestration, Infrastructure as Code, monitoring, and cloud
+      security. Focused on building reliable, scalable, and secure systems.
     </p>
   </div>
 </section>
 
-<section id="skills" class="section alt">
+<section id="skills" class="section dark">
   <div class="container">
     <h2>Technical Skills</h2>
-
     <div class="grid">
-
       <div class="card">
-        <h3>Cloud Platforms</h3>
-        <ul>
-          <li>AWS – EC2, S3, IAM, VPC, RDS, ELB, ASG, CloudWatch</li>
-          <li>Microsoft Azure – VM, VNet, Load Balancer, Monitor</li>
-          <li>Google Cloud Platform – Compute Engine, IAM</li>
-        </ul>
+        <h3>Cloud</h3>
+        <p>AWS, Azure, GCP, VPC, IAM, RDS, EC2, ELB, ASG</p>
       </div>
-
       <div class="card">
         <h3>Containers & IaC</h3>
-        <ul>
-          <li>Docker & Kubernetes (Deployments, Services, Ingress)</li>
-          <li>Terraform (Multi-Environment Provisioning)</li>
-          <li>Ansible Automation</li>
-        </ul>
+        <p>Docker, Kubernetes, Terraform, Ansible</p>
       </div>
-
       <div class="card">
         <h3>CI/CD & Monitoring</h3>
-        <ul>
-          <li>Jenkins, GitHub Actions, GitLab CI/CD</li>
-          <li>Maven & SonarQube</li>
-          <li>Prometheus & Grafana</li>
-        </ul>
+        <p>Jenkins, GitHub Actions, SonarQube, Prometheus, Grafana</p>
       </div>
-
     </div>
   </div>
 </section>
@@ -96,102 +75,65 @@
     <h2>Projects</h2>
 
     <div class="project">
-      <h3>Cloud-Native CI/CD Pipeline with Kubernetes Deployment</h3>
+      <h3>Cloud-Native CI/CD Pipeline</h3>
       <p>
-        Designed and implemented a production-grade CI/CD pipeline using Jenkins integrated 
-        with GitHub, Maven, SonarQube, and Docker to automate the entire software delivery lifecycle.
-        The pipeline included automated code checkout, dependency resolution, static code analysis,
-        unit testing, artifact packaging, container image creation, and image scanning.
-      </p>
-      <p>
-        Container images were pushed to AWS ECR and deployed to Amazon EKS using Kubernetes 
-        Deployments, Services, Ingress Controllers, and ConfigMaps. Infrastructure was provisioned 
-        using Terraform with reusable modules for VPC, EKS, IAM roles, security groups, and load balancers.
-      </p>
-      <p>
-        Implemented rolling updates, readiness/liveness probes, and Horizontal Pod Autoscaling 
-        to ensure zero-downtime deployments. Monitoring and alerting were integrated using 
-        Prometheus and Grafana dashboards to track CPU usage, memory, request latency, and pod health.
+        Built automated CI/CD pipeline using Jenkins, Maven, SonarQube and Docker.
+        Images pushed to ECR and deployed to EKS using rolling deployments and HPA.
+        Infrastructure provisioned with Terraform modules for VPC, IAM, and EKS.
       </p>
     </div>
 
     <div class="project">
-      <h3>Automated Auto Scaling Monitoring & Configuration System</h3>
+      <h3>Auto Scaling Monitoring System</h3>
       <p>
-        Built an automated monitoring and configuration system for AWS Auto Scaling Groups 
-        to dynamically manage EC2 instances during scale-out and scale-in events. Integrated 
-        AWS Lambda functions triggered via CloudWatch Events to detect instance lifecycle changes.
-      </p>
-      <p>
-        Used Ansible to automatically configure new EC2 instances with required application 
-        dependencies, security configurations, and monitoring agents. This eliminated manual 
-        provisioning and ensured configuration consistency across environments.
-      </p>
-      <p>
-        Implemented centralized logging and monitoring using Prometheus, Grafana, and 
-        CloudWatch metrics to provide real-time operational visibility. Designed alerting 
-        policies to reduce incident response time and improve system reliability.
+        Implemented Lambda-triggered automation for EC2 lifecycle events.
+        Configured instances using Ansible and integrated monitoring via
+        CloudWatch, Prometheus and Grafana dashboards.
       </p>
     </div>
 
     <div class="project">
-      <h3>Secure Three-Tier Music Streaming Platform (AWS)</h3>
+      <h3>Secure Three-Tier AWS Architecture</h3>
       <p>
-        Developed a scalable three-tier cloud architecture consisting of EC2 instances 
-        for the application layer, Amazon RDS (MySQL) for the database layer, and Amazon S3 
-        for object storage of media files. Designed a secure VPC architecture with public 
-        and private subnets, NAT Gateway, route tables, and security groups.
-      </p>
-      <p>
-        Implemented IAM role-based access control for secure service-to-service communication 
-        and configured Application Load Balancer for traffic distribution. Enabled Auto Scaling 
-        Groups to ensure high availability and horizontal scalability under variable load.
-      </p>
-      <p>
-        Integrated CI/CD pipelines for automated deployment of backend and frontend services. 
-        Configured CloudWatch for monitoring instance health, database metrics, and 
-        application logs. The architecture ensured fault tolerance, improved security posture, 
-        and optimized infrastructure cost.
+        Designed VPC with public/private subnets, NAT Gateway and ALB.
+        Deployed backend on EC2, database on RDS, media on S3.
+        Enabled Auto Scaling and IAM role-based access control.
       </p>
     </div>
 
   </div>
 </section>
 
-<section id="education" class="section alt">
+<section id="education" class="section dark">
   <div class="container">
     <h2>Education</h2>
-    <p><strong>MCA</strong> – ABIT, Cuttack (2023–2025) | CGPA: 8.88</p>
-    <p><strong>Bachelor’s Degree</strong> – Utkal University | CGPA: 7</p>
+    <p>MCA – ABIT (CGPA 8.88)</p>
+    <p>Bachelor’s Degree – Utkal University</p>
   </div>
 </section>
 
-<section id="contact" class="section contact-section">
+<section id="contact" class="section contact">
   <div class="container contact-box">
     <h2>Contact</h2>
     <div class="contact-grid">
       <div>
-        <h4>Email</h4>
+        <strong>Email</strong>
         <p>ranjitsamalarj@gmail.com</p>
       </div>
       <div>
-        <h4>Phone</h4>
+        <strong>Phone</strong>
         <p>+91 6370224907</p>
       </div>
       <div>
-        <h4>Location</h4>
+        <strong>Location</strong>
         <p>Hyderabad, India</p>
-      </div>
-      <div>
-        <h4>Availability</h4>
-        <p>Immediate | Open to Remote & Relocation</p>
       </div>
     </div>
   </div>
 </section>
 
 <footer>
-  © 2025 Ranjit Kumar Samal | DevOps Engineer
+  © 2025 Ranjit Kumar Samal
 </footer>
 
 </body>
