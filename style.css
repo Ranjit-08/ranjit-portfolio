@@ -9,26 +9,34 @@ html {
 }
 
 body {
-  font-family: 'Space Grotesk', sans-serif;
-  background: #000000;
-  color: #ffffff;
+  font-family: 'Inter', sans-serif;
+  background: #0b0f1a;
+  color: #d1d5db;
   line-height: 1.6;
 }
 
-/* Layout */
+/* Subtle dark gradient background */
+body::before {
+  content: "";
+  position: fixed;
+  inset: 0;
+  background: radial-gradient(circle at 20% 20%, #151a2d, #0b0f1a 60%);
+  z-index: -1;
+}
+
 .container {
   width: 90%;
-  max-width: 1000px;
+  max-width: 1100px;
   margin: auto;
 }
 
-/* Header */
+/* HEADER */
 header {
-  background: #000;
-  padding: 15px 0;
-  border-bottom: 2px solid #facc15;
-  position: sticky;
-  top: 0;
+  position: fixed;
+  width: 100%;
+  background: rgba(11,15,26,0.85);
+  backdrop-filter: blur(10px);
+  border-bottom: 1px solid rgba(99,102,241,0.2);
   z-index: 100;
 }
 
@@ -36,132 +44,161 @@ header {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  padding: 18px 0;
 }
 
+/* Stylish Name */
 .logo {
+  font-family: 'Sora', sans-serif;
   font-weight: 700;
-  font-size: 18px;
-  letter-spacing: 3px;
-  color: #facc15;
+  font-size: 20px;
+  letter-spacing: 1px;
+  color: #f3f4f6;
+  transition: 0.3s;
 }
 
+.logo:hover {
+  color: #8b5cf6;
+}
+
+/* Navbar */
 nav a {
-  margin-left: 20px;
+  margin-left: 28px;
   text-decoration: none;
-  color: #ffffff;
+  color: #9ca3af;
   font-size: 14px;
   transition: 0.3s;
 }
 
 nav a:hover {
-  color: #facc15;
+  color: #8b5cf6;
 }
 
-/* Hero */
+/* HERO */
 .hero {
-  padding: 80px 0 50px;
+  padding: 160px 0 90px;
 }
 
 .hero h1 {
-  font-size: 36px;
-  color: #facc15;
-  margin-bottom: 15px;
+  font-size: 44px;
+  margin-bottom: 18px;
+  font-weight: 600;
+  color: #f3f4f6;
+}
+
+.hero h1 span {
+  background: linear-gradient(90deg,#6366f1,#8b5cf6);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .hero p {
-  max-width: 600px;
-  margin-bottom: 20px;
-  color: #e5e5e5;
+  max-width: 650px;
+  margin-bottom: 28px;
+  color: #9ca3af;
 }
 
-.buttons {
+/* Buttons */
+.hero-buttons {
   display: flex;
-  gap: 15px;
+  gap: 16px;
 }
 
 .btn {
-  padding: 8px 18px;
-  border-radius: 5px;
-  text-decoration: none;
-  font-weight: 600;
+  padding: 10px 22px;
+  border-radius: 6px;
+  font-weight: 500;
   font-size: 14px;
+  text-decoration: none;
+  transition: 0.3s;
 }
 
 .primary {
-  background: #facc15;
-  color: #000;
+  background: #6366f1;
+  color: white;
 }
 
 .primary:hover {
-  opacity: 0.85;
+  background: #4f46e5;
 }
 
-.outline {
-  border: 1px solid #facc15;
-  color: #facc15;
+.secondary {
+  border: 1px solid #6366f1;
+  color: #a5b4fc;
 }
 
-.outline:hover {
-  background: #facc15;
-  color: #000;
+.secondary:hover {
+  background: #1f2937;
 }
 
-/* Sections */
+/* SECTIONS */
 .section {
-  padding: 50px 0;
+  padding: 70px 0;
 }
 
-.dark {
-  background: #111111;
+.alt {
+  background: #111827;
 }
 
 h2 {
-  color: #facc15;
+  font-size: 20px;
   margin-bottom: 20px;
-  font-size: 22px;
+  color: #c4b5fd;
+  font-weight: 600;
 }
 
-/* Grid */
+/* Cards */
 .grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
-  gap: 15px;
+  grid-template-columns: repeat(auto-fit,minmax(260px,1fr));
+  gap: 18px;
 }
 
-.card {
-  background: #1a1a1a;
+.card, .project {
+  background: #1f2937;
   padding: 20px;
-  border-left: 4px solid #facc15;
+  border-radius: 10px;
+  transition: 0.3s;
+}
+
+.card:hover, .project:hover {
+  background: #273244;
 }
 
 .project {
-  background: #1a1a1a;
-  padding: 18px;
-  margin-bottom: 15px;
-  border-left: 4px solid #facc15;
+  margin-bottom: 16px;
 }
 
 /* Contact */
-.contact {
-  background: #000;
+.contact-section {
+  background: #0f172a;
 }
 
 .contact-box {
-  border: 2px solid #facc15;
+  background: #1e293b;
   padding: 30px;
+  border-radius: 12px;
+  border: 1px solid rgba(139,92,246,0.3);
 }
 
 .contact-grid {
   display: grid;
   grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
-  gap: 15px;
-  margin-top: 15px;
+  gap: 20px;
+  margin-top: 20px;
 }
 
+.contact-grid h4 {
+  color: #a78bfa;
+  margin-bottom: 5px;
+  font-weight: 500;
+}
+
+/* Footer */
 footer {
   text-align: center;
   padding: 20px;
-  background: #000;
-  color: #999;
+  background: #0b0f1a;
+  color: #6b7280;
   font-size: 13px;
 }
