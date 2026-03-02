@@ -7,8 +7,8 @@
 <title>Ranjit Kumar Samal | Multi-Cloud DevOps Engineer</title>
 
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
-
 <link rel="stylesheet" href="style.css">
+
 </head>
 <body>
 
@@ -28,12 +28,11 @@
 <section class="hero">
   <div class="container">
     <h1>
-      Building Scalable <span>Cloud & DevOps</span><br>
-      Infrastructure
+      Designing Reliable <span>Cloud & DevOps Systems</span>
     </h1>
     <p>
-      Multi-Cloud DevOps Engineer specializing in AWS, Azure & GCP. 
-      Designing secure, automated and production-ready cloud architectures.
+      Multi-Cloud DevOps Engineer specializing in scalable infrastructure, CI/CD automation,
+      container orchestration and production-grade cloud architectures across AWS, Azure & GCP.
     </p>
     <div class="hero-buttons">
       <a href="#contact" class="btn primary">Hire Me</a>
@@ -46,11 +45,11 @@
   <div class="container">
     <h2>Profile Summary</h2>
     <p>
-      Motivated Multi-Cloud DevOps Engineer with strong hands-on experience across AWS,
-      Azure, and Google Cloud Platform. Skilled in Linux administration, CI/CD automation,
-      containerization using Docker & Kubernetes, and infrastructure provisioning using Terraform.
-      Passionate about building scalable, reliable multi-cloud architectures and automating
-      real-world production workflows.
+      Results-driven Multi-Cloud DevOps Engineer with hands-on experience designing,
+      automating, and managing cloud-native infrastructure. Strong expertise in Linux,
+      CI/CD pipelines, containerization (Docker, Kubernetes), Infrastructure as Code (Terraform),
+      monitoring, and production reliability. Passionate about building secure, scalable,
+      and highly available distributed systems.
     </p>
   </div>
 </section>
@@ -58,22 +57,23 @@
 <section id="skills" class="section alt">
   <div class="container">
     <h2>Technical Skills</h2>
+
     <div class="grid">
 
       <div class="card">
         <h3>Cloud Platforms</h3>
         <ul>
-          <li>AWS (EC2, S3, IAM, VPC, RDS, ELB, ASG, CloudWatch)</li>
-          <li>Microsoft Azure (VM, VNet, Load Balancer)</li>
-          <li>Google Cloud Platform</li>
+          <li>AWS – EC2, S3, IAM, VPC, RDS, ELB, ASG, CloudWatch</li>
+          <li>Microsoft Azure – VM, VNet, Load Balancer, Monitor</li>
+          <li>Google Cloud Platform – Compute Engine, IAM</li>
         </ul>
       </div>
 
       <div class="card">
         <h3>Containers & IaC</h3>
         <ul>
-          <li>Docker & Kubernetes</li>
-          <li>Terraform & OpenTofu</li>
+          <li>Docker & Kubernetes (Deployments, Services, Ingress)</li>
+          <li>Terraform (Multi-Environment Provisioning)</li>
           <li>Ansible Automation</li>
         </ul>
       </div>
@@ -81,8 +81,8 @@
       <div class="card">
         <h3>CI/CD & Monitoring</h3>
         <ul>
-          <li>Jenkins, GitHub Actions</li>
-          <li>SonarQube & Maven</li>
+          <li>Jenkins, GitHub Actions, GitLab CI/CD</li>
+          <li>Maven & SonarQube</li>
           <li>Prometheus & Grafana</li>
         </ul>
       </div>
@@ -96,26 +96,62 @@
     <h2>Projects</h2>
 
     <div class="project">
-      <h3>Cloud-Native DevOps CI/CD Pipeline</h3>
+      <h3>Cloud-Native CI/CD Pipeline with Kubernetes Deployment</h3>
       <p>
-        Designed and implemented an end-to-end AWS DevOps pipeline using Jenkins,
-        Maven, SonarQube, Docker, and Kubernetes. Infrastructure provisioned using Terraform.
+        Designed and implemented a production-grade CI/CD pipeline using Jenkins integrated 
+        with GitHub, Maven, SonarQube, and Docker to automate the entire software delivery lifecycle.
+        The pipeline included automated code checkout, dependency resolution, static code analysis,
+        unit testing, artifact packaging, container image creation, and image scanning.
+      </p>
+      <p>
+        Container images were pushed to AWS ECR and deployed to Amazon EKS using Kubernetes 
+        Deployments, Services, Ingress Controllers, and ConfigMaps. Infrastructure was provisioned 
+        using Terraform with reusable modules for VPC, EKS, IAM roles, security groups, and load balancers.
+      </p>
+      <p>
+        Implemented rolling updates, readiness/liveness probes, and Horizontal Pod Autoscaling 
+        to ensure zero-downtime deployments. Monitoring and alerting were integrated using 
+        Prometheus and Grafana dashboards to track CPU usage, memory, request latency, and pod health.
       </p>
     </div>
 
     <div class="project">
-      <h3>Automated ASG Monitoring System</h3>
+      <h3>Automated Auto Scaling Monitoring & Configuration System</h3>
       <p>
-        Built dynamic Auto Scaling monitoring with Ansible, AWS Lambda,
-        Prometheus and Grafana integration.
+        Built an automated monitoring and configuration system for AWS Auto Scaling Groups 
+        to dynamically manage EC2 instances during scale-out and scale-in events. Integrated 
+        AWS Lambda functions triggered via CloudWatch Events to detect instance lifecycle changes.
+      </p>
+      <p>
+        Used Ansible to automatically configure new EC2 instances with required application 
+        dependencies, security configurations, and monitoring agents. This eliminated manual 
+        provisioning and ensured configuration consistency across environments.
+      </p>
+      <p>
+        Implemented centralized logging and monitoring using Prometheus, Grafana, and 
+        CloudWatch metrics to provide real-time operational visibility. Designed alerting 
+        policies to reduce incident response time and improve system reliability.
       </p>
     </div>
 
     <div class="project">
-      <h3>Music Streaming Application (AWS)</h3>
+      <h3>Secure Three-Tier Music Streaming Platform (AWS)</h3>
       <p>
-        Developed secure three-tier architecture with EC2, RDS, S3, IAM policies,
-        Load Balancer and CI/CD deployment automation.
+        Developed a scalable three-tier cloud architecture consisting of EC2 instances 
+        for the application layer, Amazon RDS (MySQL) for the database layer, and Amazon S3 
+        for object storage of media files. Designed a secure VPC architecture with public 
+        and private subnets, NAT Gateway, route tables, and security groups.
+      </p>
+      <p>
+        Implemented IAM role-based access control for secure service-to-service communication 
+        and configured Application Load Balancer for traffic distribution. Enabled Auto Scaling 
+        Groups to ensure high availability and horizontal scalability under variable load.
+      </p>
+      <p>
+        Integrated CI/CD pipelines for automated deployment of backend and frontend services. 
+        Configured CloudWatch for monitoring instance health, database metrics, and 
+        application logs. The architecture ensured fault tolerance, improved security posture, 
+        and optimized infrastructure cost.
       </p>
     </div>
 
@@ -130,12 +166,27 @@
   </div>
 </section>
 
-<section id="contact" class="section">
-  <div class="container">
+<section id="contact" class="section contact-section">
+  <div class="container contact-box">
     <h2>Contact</h2>
-    <p>Email: ranjitsamalarj@gmail.com</p>
-    <p>Phone: +91 6370224907</p>
-    <p>Location: Hyderabad, India</p>
+    <div class="contact-grid">
+      <div>
+        <h4>Email</h4>
+        <p>ranjitsamalarj@gmail.com</p>
+      </div>
+      <div>
+        <h4>Phone</h4>
+        <p>+91 6370224907</p>
+      </div>
+      <div>
+        <h4>Location</h4>
+        <p>Hyderabad, India</p>
+      </div>
+      <div>
+        <h4>Availability</h4>
+        <p>Immediate | Open to Remote & Relocation</p>
+      </div>
+    </div>
   </div>
 </section>
 

@@ -10,25 +10,19 @@ html {
 
 body {
   font-family: 'Inter', sans-serif;
-  background: #0a0f1c;
-  color: #e2e8f0;
+  background: #0c0f1a;
+  color: #e5e7eb;
   line-height: 1.7;
 }
 
-/* Animated gradient background */
+/* Animated Gradient Background */
 body::before {
   content: "";
   position: fixed;
   inset: 0;
-  background: linear-gradient(
-    130deg,
-    #0a0f1c,
-    #0f172a,
-    #111827,
-    #0a0f1c
-  );
+  background: linear-gradient(120deg, #0c0f1a, #111827, #1e1b4b, #0c0f1a);
   background-size: 300% 300%;
-  animation: gradientMove 12s ease infinite;
+  animation: gradientMove 15s ease infinite;
   z-index: -2;
 }
 
@@ -48,9 +42,9 @@ body::before {
 .header {
   position: fixed;
   width: 100%;
-  background: rgba(10,15,28,0.8);
+  background: rgba(12,15,26,0.8);
   backdrop-filter: blur(12px);
-  border-bottom: 1px solid rgba(59,130,246,0.2);
+  border-bottom: 1px solid rgba(139,92,246,0.3);
   z-index: 100;
 }
 
@@ -65,18 +59,20 @@ body::before {
   font-weight: 700;
   font-size: 20px;
   letter-spacing: 2px;
-  color: #3b82f6;
+  background: linear-gradient(90deg,#22d3ee,#a78bfa);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 nav a {
   margin-left: 25px;
   text-decoration: none;
-  color: #94a3b8;
+  color: #9ca3af;
   transition: 0.3s;
 }
 
 nav a:hover {
-  color: #3b82f6;
+  color: #a78bfa;
 }
 
 /* Hero */
@@ -90,13 +86,13 @@ nav a:hover {
 }
 
 .hero h1 span {
-  background: linear-gradient(90deg,#3b82f6,#06b6d4);
+  background: linear-gradient(90deg,#22d3ee,#a78bfa);
   -webkit-background-clip: text;
   color: transparent;
 }
 
 .hero p {
-  max-width: 600px;
+  max-width: 650px;
   margin-bottom: 30px;
   color: #cbd5e1;
 }
@@ -115,22 +111,22 @@ nav a:hover {
 }
 
 .primary {
-  background: linear-gradient(90deg,#3b82f6,#06b6d4);
+  background: linear-gradient(90deg,#22d3ee,#a78bfa);
   color: white;
 }
 
 .primary:hover {
   transform: translateY(-4px);
-  box-shadow: 0 8px 25px rgba(59,130,246,0.5);
+  box-shadow: 0 10px 25px rgba(167,139,250,0.4);
 }
 
 .secondary {
-  border: 1px solid #3b82f6;
-  color: #3b82f6;
+  border: 1px solid #a78bfa;
+  color: #a78bfa;
 }
 
 .secondary:hover {
-  background: #3b82f6;
+  background: #a78bfa;
   color: white;
 }
 
@@ -140,12 +136,14 @@ nav a:hover {
 }
 
 .alt {
-  background: #0f172a;
+  background: #111827;
 }
 
 h2 {
-  margin-bottom: 25px;
-  color: #3b82f6;
+  margin-bottom: 30px;
+  background: linear-gradient(90deg,#22d3ee,#a78bfa);
+  -webkit-background-clip: text;
+  color: transparent;
 }
 
 .grid {
@@ -155,9 +153,9 @@ h2 {
 }
 
 .card, .project {
-  background: #111827;
-  padding: 25px;
-  border-radius: 12px;
+  background: #1f2937;
+  padding: 30px;
+  border-radius: 14px;
   transition: 0.3s;
 }
 
@@ -166,9 +164,33 @@ h2 {
   box-shadow: 0 15px 35px rgba(0,0,0,0.4);
 }
 
+/* Contact Styling */
+.contact-section {
+  background: #0f172a;
+}
+
+.contact-box {
+  background: linear-gradient(135deg,#1e1b4b,#111827);
+  padding: 50px;
+  border-radius: 20px;
+  border: 1px solid rgba(167,139,250,0.3);
+}
+
+.contact-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit,minmax(200px,1fr));
+  gap: 25px;
+  margin-top: 30px;
+}
+
+.contact-grid h4 {
+  color: #a78bfa;
+  margin-bottom: 5px;
+}
+
 footer {
   text-align: center;
   padding: 25px;
-  background: #0a0f1c;
-  color: #94a3b8;
+  background: #0c0f1a;
+  color: #9ca3af;
 }
