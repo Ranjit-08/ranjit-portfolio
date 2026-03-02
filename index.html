@@ -6,51 +6,41 @@
 
 <title>Ranjit Kumar Samal | Multi-Cloud DevOps Engineer</title>
 
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=Orbitron:wght@500;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
 
 <link rel="stylesheet" href="style.css">
 </head>
-
 <body>
 
-<header>
+<header class="header">
   <div class="container nav">
-    <h2 class="logo">Ranjit Kumar Samal</h2>
-    <div class="nav-links">
+    <div class="logo">Ranjit Kumar Samal</div>
+    <nav>
       <a href="#about">About</a>
       <a href="#skills">Skills</a>
       <a href="#projects">Projects</a>
       <a href="#education">Education</a>
       <a href="#contact">Contact</a>
-    </div>
+    </nav>
   </div>
 </header>
 
 <section class="hero">
-  <div class="container hero-wrapper">
-
-    <div class="hero-left">
-      <h1>Multi-Cloud DevOps Engineer</h1>
-      <p>
-        Building scalable, secure and automated cloud infrastructure across AWS, Azure & GCP.
-      </p>
-
-      <div class="hero-buttons">
-        <a href="#contact" class="btn-primary">Hire Me</a>
-        <a href="Resume.pdf" download class="btn-outline">Download Resume</a>
-      </div>
+  <div class="container">
+    <h1>
+      Building Scalable <span>Cloud & DevOps</span><br>
+      Infrastructure
+    </h1>
+    <p>
+      Multi-Cloud DevOps Engineer specializing in AWS, Azure & GCP. 
+      Designing secure, automated and production-ready cloud architectures.
+    </p>
+    <div class="hero-buttons">
+      <a href="#contact" class="btn primary">Hire Me</a>
+      <a href="Resume.pdf" download class="btn secondary">Download Resume</a>
     </div>
-
-    <div class="hero-right">
-      <div class="profile-circle">
-        <img src="devops.png" alt="DevOps Lifecycle">
-      </div>
-    </div>
-
   </div>
 </section>
-
-<!-- Your sections unchanged -->
 
 <section id="about" class="section">
   <div class="container">
@@ -68,21 +58,21 @@
 <section id="skills" class="section alt">
   <div class="container">
     <h2>Technical Skills</h2>
-    <div class="grid-3">
+    <div class="grid">
+
       <div class="card">
         <h3>Cloud Platforms</h3>
         <ul>
-          <li>AWS (EC2, S3, IAM, VPC, RDS, ELB, ASG, CloudWatch, DMS)</li>
-          <li>Microsoft Azure (VM, VNet, Load Balancer, Monitor)</li>
-          <li>Google Cloud (Compute Engine, VPC, IAM, Monitoring)</li>
+          <li>AWS (EC2, S3, IAM, VPC, RDS, ELB, ASG, CloudWatch)</li>
+          <li>Microsoft Azure (VM, VNet, Load Balancer)</li>
+          <li>Google Cloud Platform</li>
         </ul>
       </div>
 
       <div class="card">
         <h3>Containers & IaC</h3>
         <ul>
-          <li>Docker, Docker Compose</li>
-          <li>Kubernetes (Deployments, Services, Ingress)</li>
+          <li>Docker & Kubernetes</li>
           <li>Terraform & OpenTofu</li>
           <li>Ansible Automation</li>
         </ul>
@@ -91,12 +81,12 @@
       <div class="card">
         <h3>CI/CD & Monitoring</h3>
         <ul>
-          <li>Jenkins, GitHub Actions, GitLab CI/CD</li>
-          <li>Maven & SonarQube</li>
+          <li>Jenkins, GitHub Actions</li>
+          <li>SonarQube & Maven</li>
           <li>Prometheus & Grafana</li>
-          <li>Git / GitHub / GitLab</li>
         </ul>
       </div>
+
     </div>
   </div>
 </section>
@@ -107,25 +97,35 @@
 
     <div class="project">
       <h3>Cloud-Native DevOps CI/CD Pipeline</h3>
-      <p>Designed and implemented an end-to-end AWS DevOps pipeline using Jenkins, Maven, SonarQube, Docker, and Kubernetes.</p>
+      <p>
+        Designed and implemented an end-to-end AWS DevOps pipeline using Jenkins,
+        Maven, SonarQube, Docker, and Kubernetes. Infrastructure provisioned using Terraform.
+      </p>
     </div>
 
     <div class="project">
       <h3>Automated ASG Monitoring System</h3>
-      <p>Built automated monitoring for Auto Scaling Groups using Ansible, AWS Lambda, Prometheus, and Grafana.</p>
+      <p>
+        Built dynamic Auto Scaling monitoring with Ansible, AWS Lambda,
+        Prometheus and Grafana integration.
+      </p>
     </div>
 
     <div class="project">
       <h3>Music Streaming Application (AWS)</h3>
-      <p>Developed a secure music listening platform with S3, RDS, IAM, Load Balancer and CI/CD deployment.</p>
+      <p>
+        Developed secure three-tier architecture with EC2, RDS, S3, IAM policies,
+        Load Balancer and CI/CD deployment automation.
+      </p>
     </div>
+
   </div>
 </section>
 
 <section id="education" class="section alt">
   <div class="container">
     <h2>Education</h2>
-    <p><strong>MCA</strong> – ABIT, Cuttack (2023-2025) | CGPA: 8.88</p>
+    <p><strong>MCA</strong> – ABIT, Cuttack (2023–2025) | CGPA: 8.88</p>
     <p><strong>Bachelor’s Degree</strong> – Utkal University | CGPA: 7</p>
   </div>
 </section>
@@ -133,12 +133,14 @@
 <section id="contact" class="section">
   <div class="container">
     <h2>Contact</h2>
-    <p><strong>Email:</strong> ranjitsamalarj@gmail.com</p>
+    <p>Email: ranjitsamalarj@gmail.com</p>
+    <p>Phone: +91 6370224907</p>
+    <p>Location: Hyderabad, India</p>
   </div>
 </section>
 
 <footer>
-  <p>© 2025 Ranjit Kumar Samal | DevOps Engineer</p>
+  © 2025 Ranjit Kumar Samal | DevOps Engineer
 </footer>
 
 </body>
