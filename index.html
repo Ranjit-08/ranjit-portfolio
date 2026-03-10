@@ -1,159 +1,450 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-
-<title>Ranjit Kumar Samal | DevOps Engineer</title>
-
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Playfair+Display:ital,wght@1,600&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Ranjit Kumar Samal — DevOps Engineer</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Syne:wght@400;600;700;800&family=Manrope:wght@300;400;500;600&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
 </head>
-
 <body>
 
-<header>
-  <div class="container nav">
-    <div class="logo">Ranjit Kumar Samal</div>
-    <nav>
-      <a href="#about">About</a>
-      <a href="#skills">Skills</a>
-      <a href="#projects">Projects</a>
-      <a href="#education">Education</a>
-      <a href="#contact">Contact</a>
-    </nav>
-  </div>
-</header>
+  <!-- CURSOR -->
+  <div class="cursor"></div>
+  <div class="cursor-trail"></div>
 
-<section class="hero">
-  <div class="devops-bg"></div>
-
-  <div class="container hero-content">
-    <h1>
-      Designing Reliable <span>Cloud & DevOps Systems</span>
-    </h1>
-
-    <p>
-      Multi-Cloud DevOps Engineer specializing in scalable infrastructure,
-      CI/CD automation, container orchestration and production-grade
-      cloud architectures across AWS, Azure & GCP.
-    </p>
-
-    <div class="hero-buttons">
-      <a href="#contact" class="btn primary">Hire Me</a>
-      <a href="Resume.pdf" download class="btn secondary">Download Resume</a>
+  <!-- HEADER -->
+  <header id="header">
+    <div class="nav-inner">
+      <div class="logo">
+        <span class="logo-bracket">&lt;</span>RKS<span class="logo-bracket">/&gt;</span>
+      </div>
+      <nav>
+        <a href="#about">About</a>
+        <a href="#skills">Skills</a>
+        <a href="#projects">Projects</a>
+        <a href="#education">Education</a>
+        <a href="#contact">Contact</a>
+      </nav>
+      <a href="Resume.pdf" download class="nav-cta">Download CV</a>
     </div>
-  </div>
-</section>
+  </header>
 
-<!-- ABOUT -->
-<section id="about" class="section">
-  <div class="container">
-    <h2>Profile Summary</h2>
-    <p>
-      Motivated Multi-Cloud DevOps Engineer with hands-on experience across AWS,
-      Azure and GCP. Skilled in Linux administration, CI/CD automation,
-      Docker & Kubernetes orchestration, Infrastructure as Code using Terraform,
-      and monitoring using Prometheus & Grafana.
-    </p>
-  </div>
-</section>
+  <!-- HERO -->
+  <section class="hero" id="home">
+    <div class="hero-grid-bg"></div>
+    <div class="hero-glow"></div>
 
-<!-- SKILLS -->
-<section id="skills" class="section alt">
-  <div class="container">
-    <h2>Technical Skills</h2>
-
-    <div class="grid">
-      <div class="card">
-        <h3>Cloud Platforms</h3>
-        <p>AWS (EC2, S3, IAM, VPC, RDS, ELB, ASG, CloudWatch), Azure, GCP</p>
+    <div class="hero-inner">
+      <div class="hero-badge">
+        <span class="status-dot"></span>
+        Available for opportunities
       </div>
 
-      <div class="card">
-        <h3>Containers & IaC</h3>
-        <p>Docker, Kubernetes, Terraform, Ansible, Infrastructure Automation</p>
-      </div>
+      <h1 class="hero-title">
+        <span class="line-reveal" style="--delay:0.1s">Building</span>
+        <span class="line-reveal accent-text" style="--delay:0.25s">Resilient</span>
+        <span class="line-reveal" style="--delay:0.4s">Cloud Systems</span>
+      </h1>
 
-      <div class="card">
-        <h3>CI/CD & Monitoring</h3>
-        <p>Jenkins, GitHub Actions, GitLab CI/CD, SonarQube, Prometheus, Grafana</p>
-      </div>
-    </div>
-  </div>
-</section>
-
-<!-- PROJECTS -->
-<section id="projects" class="section">
-  <div class="container">
-    <h2>Projects</h2>
-
-    <div class="project">
-      <h3>Cloud-Native CI/CD Pipeline</h3>
-      <p>
-        Designed automated CI/CD workflow integrating GitHub, Jenkins,
-        Maven, SonarQube and Docker. Built container images pushed to ECR
-        and deployed to EKS with rolling updates and Horizontal Pod Autoscaling.
-        Infrastructure provisioned using Terraform with modular design.
+      <p class="hero-sub line-reveal" style="--delay:0.55s">
+        Multi-Cloud DevOps Engineer crafting scalable infrastructure,
+        CI/CD pipelines, and container orchestration across
+        <strong>AWS · Azure · GCP</strong>
       </p>
+
+      <div class="hero-actions line-reveal" style="--delay:0.7s">
+        <a href="#contact" class="btn-primary">Hire Me</a>
+        <a href="#projects" class="btn-ghost">View Projects</a>
+      </div>
+
+      <div class="hero-stats line-reveal" style="--delay:0.85s">
+        <div class="stat">
+          <span class="stat-num">3+</span>
+          <span class="stat-label">Cloud Platforms</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">5+</span>
+          <span class="stat-label">Projects Built</span>
+        </div>
+        <div class="stat-divider"></div>
+        <div class="stat">
+          <span class="stat-num">8.88</span>
+          <span class="stat-label">CGPA</span>
+        </div>
+      </div>
     </div>
 
-    <div class="project">
-      <h3>Auto Scaling Monitoring Automation</h3>
-      <p>
-        Implemented event-driven automation using AWS Lambda and CloudWatch
-        for EC2 lifecycle management. Automated server configuration using
-        Ansible and integrated monitoring dashboards using Prometheus & Grafana.
+    <div class="hero-terminal line-reveal" style="--delay:0.6s">
+      <div class="terminal-header">
+        <span class="dot red"></span>
+        <span class="dot yellow"></span>
+        <span class="dot green"></span>
+        <span class="terminal-title">ranjit@devops ~ $</span>
+      </div>
+      <div class="terminal-body">
+        <div class="terminal-line"><span class="cmd">$</span> kubectl get pods --all-namespaces</div>
+        <div class="terminal-output">✓ 12/12 pods running</div>
+        <div class="terminal-line"><span class="cmd">$</span> terraform apply -auto-approve</div>
+        <div class="terminal-output">✓ 8 resources added</div>
+        <div class="terminal-line"><span class="cmd">$</span> docker build -t app:v2.1 .</div>
+        <div class="terminal-output">✓ Successfully built a8f3b21c</div>
+        <div class="terminal-line"><span class="cmd">$</span> ansible-playbook deploy.yml</div>
+        <div class="terminal-output typing">✓ PLAY RECAP — ok=14 changed=3</div>
+      </div>
+    </div>
+
+    <div class="scroll-hint">
+      <span>scroll</span>
+      <div class="scroll-line"></div>
+    </div>
+  </section>
+
+  <!-- ABOUT -->
+  <section id="about" class="section">
+    <div class="section-inner">
+      <div class="section-tag">01 · About</div>
+      <div class="about-layout">
+        <div class="about-left">
+          <h2 class="section-title">Engineering <em>reliability</em> into every layer</h2>
+        </div>
+        <div class="about-right">
+          <p>
+            I'm a Motivated Multi-Cloud DevOps Engineer with hands-on experience
+            across AWS, Azure and GCP. My work sits at the intersection of
+            infrastructure automation and developer experience — making
+            deployments faster, systems more resilient, and operations invisible.
+          </p>
+          <p>
+            Skilled in Linux administration, CI/CD automation, Docker & Kubernetes
+            orchestration, Infrastructure as Code using Terraform, and observability
+            stacks using Prometheus & Grafana. I believe infrastructure should be
+            code — versioned, tested, and reviewed like any software.
+          </p>
+          <div class="about-chips">
+            <span>AWS Certified</span>
+            <span>Kubernetes</span>
+            <span>GitOps</span>
+            <span>SRE Practices</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SKILLS -->
+  <section id="skills" class="section section-dark">
+    <div class="section-inner">
+      <div class="section-tag">02 · Skills</div>
+      <h2 class="section-title">Technical <em>Arsenal</em></h2>
+
+      <div class="skills-grid">
+
+        <div class="skill-card">
+          <div class="skill-icon">☁</div>
+          <h3>Cloud Platforms</h3>
+          <ul>
+            <li>AWS — EC2, S3, IAM, VPC, RDS</li>
+            <li>AWS — ELB, ASG, CloudWatch, ECR</li>
+            <li>Microsoft Azure</li>
+            <li>Google Cloud Platform (GCP)</li>
+          </ul>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item">
+              <span>AWS</span>
+              <div class="bar"><div class="bar-fill" style="--w:88%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Azure</span>
+              <div class="bar"><div class="bar-fill" style="--w:72%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>GCP</span>
+              <div class="bar"><div class="bar-fill" style="--w:65%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">⎈</div>
+          <h3>Containers & IaC</h3>
+          <ul>
+            <li>Docker & Docker Compose</li>
+            <li>Kubernetes (EKS, self-managed)</li>
+            <li>Terraform — modular design</li>
+            <li>Ansible — configuration mgmt</li>
+          </ul>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item">
+              <span>Docker</span>
+              <div class="bar"><div class="bar-fill" style="--w:92%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Kubernetes</span>
+              <div class="bar"><div class="bar-fill" style="--w:80%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Terraform</span>
+              <div class="bar"><div class="bar-fill" style="--w:85%"></div></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="skill-card">
+          <div class="skill-icon">⚡</div>
+          <h3>CI/CD & Monitoring</h3>
+          <ul>
+            <li>Jenkins & GitHub Actions</li>
+            <li>GitLab CI/CD pipelines</li>
+            <li>SonarQube — code quality</li>
+            <li>Prometheus & Grafana</li>
+          </ul>
+          <div class="skill-bar-group">
+            <div class="skill-bar-item">
+              <span>Jenkins</span>
+              <div class="bar"><div class="bar-fill" style="--w:85%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>GitHub Actions</span>
+              <div class="bar"><div class="bar-fill" style="--w:88%"></div></div>
+            </div>
+            <div class="skill-bar-item">
+              <span>Grafana</span>
+              <div class="bar"><div class="bar-fill" style="--w:78%"></div></div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+
+      <div class="tools-row">
+        <span class="tool-tag">Linux</span>
+        <span class="tool-tag">Bash</span>
+        <span class="tool-tag">Git</span>
+        <span class="tool-tag">Maven</span>
+        <span class="tool-tag">Nginx</span>
+        <span class="tool-tag">MySQL</span>
+        <span class="tool-tag">Python</span>
+        <span class="tool-tag">YAML</span>
+        <span class="tool-tag">Helm</span>
+        <span class="tool-tag">AWS Lambda</span>
+        <span class="tool-tag">NAT Gateway</span>
+        <span class="tool-tag">IAM</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- PROJECTS -->
+  <section id="projects" class="section">
+    <div class="section-inner">
+      <div class="section-tag">03 · Projects</div>
+      <h2 class="section-title">Featured <em>Work</em></h2>
+
+      <div class="projects-list">
+
+        <div class="project-card">
+          <div class="project-number">01</div>
+          <div class="project-content">
+            <div class="project-top">
+              <h3>Cloud-Native CI/CD Pipeline</h3>
+              <div class="project-tags">
+                <span>Jenkins</span><span>Docker</span><span>EKS</span><span>Terraform</span>
+              </div>
+            </div>
+            <p>
+              Designed an automated CI/CD workflow integrating GitHub, Jenkins, Maven,
+              SonarQube and Docker. Built container images pushed to Amazon ECR and deployed
+              to EKS with rolling updates and Horizontal Pod Autoscaling. Infrastructure
+              provisioned using Terraform with a fully modular design for reusability.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight"><span class="hl-dot"></span>Zero-downtime rolling deployments</div>
+              <div class="highlight"><span class="hl-dot"></span>HPA with custom metrics</div>
+              <div class="highlight"><span class="hl-dot"></span>SonarQube quality gates</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-number">02</div>
+          <div class="project-content">
+            <div class="project-top">
+              <h3>Auto Scaling Monitoring Automation</h3>
+              <div class="project-tags">
+                <span>Lambda</span><span>CloudWatch</span><span>Ansible</span><span>Grafana</span>
+              </div>
+            </div>
+            <p>
+              Implemented event-driven automation using AWS Lambda and CloudWatch for
+              EC2 lifecycle management. Automated server configuration using Ansible
+              playbooks and integrated real-time monitoring dashboards using Prometheus
+              & Grafana for full observability.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight"><span class="hl-dot"></span>Event-driven EC2 lifecycle</div>
+              <div class="highlight"><span class="hl-dot"></span>Full-stack observability</div>
+              <div class="highlight"><span class="hl-dot"></span>Idempotent Ansible config</div>
+            </div>
+          </div>
+        </div>
+
+        <div class="project-card">
+          <div class="project-number">03</div>
+          <div class="project-content">
+            <div class="project-top">
+              <h3>Secure Three-Tier AWS Architecture</h3>
+              <div class="project-tags">
+                <span>VPC</span><span>EC2</span><span>RDS</span><span>S3</span><span>IAM</span>
+              </div>
+            </div>
+            <p>
+              Architected a production-ready VPC with public/private subnets, NAT Gateway
+              and Application Load Balancer. Backend deployed on EC2, database on RDS, and
+              object storage on S3 — all with IAM-based least-privilege access control and
+              security group isolation.
+            </p>
+            <div class="project-highlights">
+              <div class="highlight"><span class="hl-dot"></span>Least-privilege IAM policies</div>
+              <div class="highlight"><span class="hl-dot"></span>Multi-AZ RDS setup</div>
+              <div class="highlight"><span class="hl-dot"></span>ALB with SSL termination</div>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </section>
+
+  <!-- EDUCATION -->
+  <section id="education" class="section section-dark">
+    <div class="section-inner">
+      <div class="section-tag">04 · Education</div>
+      <h2 class="section-title">Academic <em>Background</em></h2>
+
+      <div class="edu-grid">
+        <div class="edu-card">
+          <div class="edu-icon">🎓</div>
+          <div class="edu-info">
+            <span class="edu-degree">Master of Computer Applications (MCA)</span>
+            <span class="edu-inst">ABIT, Cuttack</span>
+            <span class="edu-score">CGPA — 8.88 / 10</span>
+          </div>
+        </div>
+        <div class="edu-card">
+          <div class="edu-icon">📘</div>
+          <div class="edu-info">
+            <span class="edu-degree">Bachelor's Degree</span>
+            <span class="edu-inst">Utkal University</span>
+            <span class="edu-score">Graduated</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CONTACT -->
+  <section id="contact" class="section">
+    <div class="section-inner">
+      <div class="section-tag">05 · Contact</div>
+      <h2 class="section-title">Let's <em>Build</em> Together</h2>
+      <p class="contact-sub">
+        Open to full-time roles, freelance infrastructure projects, and consulting.
+        Drop me a message — I respond within 24 hours.
       </p>
-    </div>
 
-    <div class="project">
-      <h3>Secure Three-Tier AWS Architecture</h3>
-      <p>
-        Architected production-ready VPC with public/private subnets,
-        NAT Gateway and Application Load Balancer. Deployed backend on EC2,
-        database on RDS and object storage on S3 with IAM-based access control.
-      </p>
-    </div>
-  </div>
-</section>
-
-<!-- EDUCATION -->
-<section id="education" class="section alt">
-  <div class="container">
-    <h2>Education</h2>
-    <p><strong>MCA</strong> – ABIT, Cuttack (CGPA: 8.88)</p>
-    <p><strong>Bachelor’s Degree</strong> – Utkal University</p>
-  </div>
-</section>
-
-<!-- CONTACT -->
-<section id="contact" class="section contact-section">
-  <div class="container contact-box">
-    <h2>Contact</h2>
-
-    <div class="contact-grid">
-      <div>
-        <h4>Email</h4>
-        <p>ranjitsamalarj@gmail.com</p>
+      <div class="contact-grid">
+        <a href="mailto:ranjitsamalarj@gmail.com" class="contact-card">
+          <div class="contact-icon">✉</div>
+          <div>
+            <span class="contact-label">Email</span>
+            <span class="contact-value">ranjitsamalarj@gmail.com</span>
+          </div>
+        </a>
+        <a href="tel:+916370224907" class="contact-card">
+          <div class="contact-icon">☎</div>
+          <div>
+            <span class="contact-label">Phone</span>
+            <span class="contact-value">+91 6370224907</span>
+          </div>
+        </a>
+        <div class="contact-card">
+          <div class="contact-icon">📍</div>
+          <div>
+            <span class="contact-label">Location</span>
+            <span class="contact-value">Hyderabad, India</span>
+          </div>
+        </div>
       </div>
 
-      <div>
-        <h4>Phone</h4>
-        <p>+91 6370224907</p>
-      </div>
-
-      <div>
-        <h4>Location</h4>
-        <p>Hyderabad, India</p>
+      <div class="contact-cta">
+        <a href="mailto:ranjitsamalarj@gmail.com" class="btn-primary large">Send a Message</a>
+        <a href="Resume.pdf" download class="btn-ghost large">Download Resume</a>
       </div>
     </div>
-  </div>
-</section>
+  </section>
 
-<footer>
-  © 2025 Ranjit Kumar Samal | DevOps Engineer
-</footer>
+  <!-- FOOTER -->
+  <footer>
+    <div class="footer-inner">
+      <div class="logo">
+        <span class="logo-bracket">&lt;</span>RKS<span class="logo-bracket">/&gt;</span>
+      </div>
+      <p>© 2025 Ranjit Kumar Samal · DevOps Engineer · Hyderabad, India</p>
+      <p class="footer-note">Designed & built with precision.</p>
+    </div>
+  </footer>
 
+  <script>
+    // Custom cursor
+    const cursor = document.querySelector('.cursor');
+    const trail = document.querySelector('.cursor-trail');
+    document.addEventListener('mousemove', e => {
+      cursor.style.left = e.clientX + 'px';
+      cursor.style.top = e.clientY + 'px';
+      setTimeout(() => {
+        trail.style.left = e.clientX + 'px';
+        trail.style.top = e.clientY + 'px';
+      }, 80);
+    });
+    document.querySelectorAll('a, button, .skill-card, .project-card, .contact-card').forEach(el => {
+      el.addEventListener('mouseenter', () => cursor.classList.add('hover'));
+      el.addEventListener('mouseleave', () => cursor.classList.remove('hover'));
+    });
+
+    // Header scroll behavior
+    const header = document.getElementById('header');
+    window.addEventListener('scroll', () => {
+      header.classList.toggle('scrolled', window.scrollY > 60);
+    });
+
+    // Intersection Observer for scroll reveals
+    const reveals = document.querySelectorAll(
+      '.skill-card, .project-card, .edu-card, .contact-card, .about-layout, .tools-row'
+    );
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.classList.add('visible');
+          observer.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    reveals.forEach(el => observer.observe(el));
+
+    // Animate skill bars on scroll
+    const bars = document.querySelectorAll('.bar-fill');
+    const barObserver = new IntersectionObserver(entries => {
+      entries.forEach(e => {
+        if (e.isIntersecting) {
+          e.target.style.width = e.target.style.getPropertyValue('--w') || e.target.style.cssText.match(/--w:([\d%]+)/)?.[1] || '0%';
+          barObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.5 });
+    bars.forEach(b => { b.style.width = '0'; barObserver.observe(b); });
+  </script>
 </body>
 </html>
