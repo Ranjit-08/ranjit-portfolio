@@ -40,30 +40,30 @@
       </div>
 
       <h1 class="hero-title">
-        <span class="line-reveal" style="--delay:0.1s">Building</span>
-        <span class="line-reveal accent-text" style="--delay:0.25s">Resilient</span>
-        <span class="line-reveal" style="--delay:0.4s">Cloud Systems</span>
+        <span class="line">Building</span>
+        <span class="line accent-text">Resilient</span>
+        <span class="line">Cloud Systems</span>
       </h1>
 
-      <p class="hero-sub line-reveal" style="--delay:0.55s">
+      <p class="hero-sub">
         Multi-Cloud DevOps Engineer crafting scalable infrastructure,
         CI/CD pipelines, and container orchestration across
         <strong>AWS · Azure · GCP</strong>
       </p>
 
-      <div class="hero-actions line-reveal" style="--delay:0.7s">
+      <div class="hero-actions">
         <a href="#contact" class="btn-primary">Hire Me</a>
         <a href="#projects" class="btn-ghost">View Projects</a>
       </div>
 
-      <div class="hero-stats line-reveal" style="--delay:0.85s">
+      <div class="hero-stats">
         <div class="stat">
           <span class="stat-num">3+</span>
           <span class="stat-label">Cloud Platforms</span>
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
-          <span class="stat-num">5+</span>
+          <span class="stat-num">8+</span>
           <span class="stat-label">Projects Built</span>
         </div>
         <div class="stat-divider"></div>
@@ -74,7 +74,7 @@
       </div>
     </div>
 
-    <div class="hero-terminal line-reveal" style="--delay:0.6s">
+    <div class="hero-terminal">
       <div class="terminal-header">
         <span class="dot red"></span>
         <span class="dot yellow"></span>
@@ -93,7 +93,7 @@
       </div>
     </div>
 
-    <div class="scroll-hint">
+    <div class="hero-scroll-hint">
       <span>scroll</span>
       <div class="scroll-line"></div>
     </div>
@@ -548,30 +548,25 @@
     </div>
   </footer>
 
-  <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
-    // Header scroll behavior
+  <script>
+    // Header scroll
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // Intersection Observer for scroll reveals
-    const reveals = document.querySelectorAll(
-      '.skill-card, .project-card, .edu-card, .contact-card, .about-layout, .tools-row'
-    );
-    const observer = new IntersectionObserver(entries => {
-      entries.forEach(e => {
-        if (e.isIntersecting) {
-          e.target.classList.add('visible');
-          observer.unobserve(e.target);
-        }
-      });
-    }, { threshold: 0.12 });
-    reveals.forEach(el => observer.observe(el));
-
-    // Animate skill bars on scroll
+    // Animate skill bars when visible
     const bars = document.querySelectorAll('.bar-fill');
     const barObserver = new IntersectionObserver(entries => {
       entries.forEach(e => {
         if (e.isIntersecting) {
-          e.target.style.w
+          const w = e.target.style.cssText.match(/--w:\s*([\d.%]+)/);
+          if (w) e.target.style.width = w[1];
+          barObserver.unobserve(e.target);
+        }
+      });
+    }, { threshold: 0.4 });
+    bars.forEach(b => barObserver.observe(b));
+  </script>
+</body>
+</html>
