@@ -33,32 +33,6 @@ body {
   color: var(--text);
   line-height: 1.7;
   overflow-x: hidden;
-  cursor: none;
-}
-
-/* ─── CUSTOM CURSOR ──────────────────────────────────── */
-.cursor, .cursor-trail {
-  position: fixed;
-  border-radius: 50%;
-  pointer-events: none;
-  z-index: 9999;
-  transform: translate(-50%, -50%);
-  transition: transform 0.15s ease;
-}
-.cursor {
-  width: 10px; height: 10px;
-  background: var(--cyan);
-  box-shadow: 0 0 12px var(--cyan);
-}
-.cursor-trail {
-  width: 28px; height: 28px;
-  border: 1.5px solid rgba(0, 212, 255, 0.4);
-  transition: left 0.1s ease, top 0.1s ease, transform 0.15s ease;
-}
-.cursor.hover {
-  transform: translate(-50%,-50%) scale(2.2);
-  background: transparent;
-  border: 1.5px solid var(--cyan);
 }
 
 /* ─── SCROLLBAR ──────────────────────────────────────── */
@@ -646,6 +620,15 @@ nav a:hover::after { transform: scaleX(1); }
   border-radius: 50%;
   background: var(--green);
   flex-shrink: 0;
+}
+
+.project-content p code {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  color: var(--cyan);
+  background: var(--cyan-dim);
+  padding: 1px 6px;
+  border-radius: 3px;
 }
 
 /* ─── EDUCATION ──────────────────────────────────────── */
