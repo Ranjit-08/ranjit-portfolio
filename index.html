@@ -63,7 +63,7 @@
         </div>
         <div class="stat-divider"></div>
         <div class="stat">
-          <span class="stat-num">8+</span>
+          <span class="stat-num">9+</span>
           <span class="stat-label">Projects Built</span>
         </div>
         <div class="stat-divider"></div>
@@ -115,9 +115,9 @@
             deployments faster, systems more resilient, and operations invisible.
           </p>
           <p>
-            Skilled in Linux administration, CI/CD automation, Docker & Kubernetes
+            Skilled in Linux administration, CI/CD automation, Docker &amp; Kubernetes
             orchestration, Infrastructure as Code using Terraform, and observability
-            stacks using Prometheus & Grafana. I believe infrastructure should be
+            stacks using Prometheus &amp; Grafana. I believe infrastructure should be
             code — versioned, tested, and reviewed like any software.
           </p>
           <div class="about-chips">
@@ -166,9 +166,9 @@
 
         <div class="skill-card">
           <div class="skill-icon">⎈</div>
-          <h3>Containers & IaC</h3>
+          <h3>Containers &amp; IaC</h3>
           <ul>
-            <li>Docker & Docker Compose</li>
+            <li>Docker &amp; Docker Compose</li>
             <li>Kubernetes (EKS, self-managed)</li>
             <li>Terraform — modular design</li>
             <li>Ansible — configuration mgmt</li>
@@ -191,12 +191,12 @@
 
         <div class="skill-card">
           <div class="skill-icon">⚡</div>
-          <h3>CI/CD & Monitoring</h3>
+          <h3>CI/CD &amp; Monitoring</h3>
           <ul>
-            <li>Jenkins & GitHub Actions</li>
+            <li>Jenkins &amp; GitHub Actions</li>
             <li>GitLab CI/CD pipelines</li>
             <li>SonarQube — code quality</li>
-            <li>Prometheus & Grafana</li>
+            <li>Prometheus &amp; Grafana</li>
           </ul>
           <div class="skill-bar-group">
             <div class="skill-bar-item">
@@ -229,6 +229,9 @@
         <span class="tool-tag">AWS Lambda</span>
         <span class="tool-tag">NAT Gateway</span>
         <span class="tool-tag">IAM</span>
+        <span class="tool-tag">Flask</span>
+        <span class="tool-tag">Gunicorn</span>
+        <span class="tool-tag">CloudFront</span>
       </div>
     </div>
   </section>
@@ -248,22 +251,20 @@
             <div class="project-top">
               <h3>Cloud-Native CI/CD Pipeline on AWS EKS</h3>
               <div class="project-tags">
-                <span>Jenkins</span><span>ECR</span><span>EKS</span><span>Terraform</span><span>SonarQube</span><span>Docker</span>
+                <span>Jenkins</span><span>ECR</span><span>EKS</span><span>Terraform</span><span>SonarQube</span><span>Docker</span><span>Maven</span><span>GitLab</span>
               </div>
             </div>
             <p>
-              Built an end-to-end CI/CD pipeline integrating GitHub webhooks with Jenkins to trigger
-              automated Maven builds, SonarQube static analysis and Docker image creation. Images were
-              versioned and pushed to Amazon ECR, then deployed to Amazon EKS using rolling update
-              strategies with Horizontal Pod Autoscaling tied to CPU and memory metrics. All AWS
-              infrastructure — VPC, node groups, IAM roles and ECR — was provisioned via modular
-              Terraform, enabling consistent environment replication across dev, staging and production.
+              Designed and implemented a complete end-to-end DevOps pipeline that takes code from a developer's commit all the way to a live Kubernetes deployment without any manual intervention. The pipeline integrates GitHub and GitLab webhooks with Jenkins to automatically trigger Maven builds the moment code is pushed. Every build runs through SonarQube static analysis with quality gates configured — a failed gate stops the pipeline before a bad image ever gets created.
+            </p>
+            <p>
+              Once a build passes, Docker packages the application and the versioned image is pushed to Amazon ECR. Jenkins then applies the updated Kubernetes manifests to an Amazon EKS cluster using rolling update strategies, ensuring zero downtime during releases. Horizontal Pod Autoscaling is configured against CPU and memory thresholds so the cluster scales workloads automatically as traffic changes. Every AWS resource — VPC, subnets, EKS node groups, IAM roles, ECR repositories — is provisioned via modular Terraform, meaning dev, staging and production environments can be spun up from the same codebase with environment-specific variable files.
             </p>
             <div class="project-highlights">
               <div class="highlight"><span class="hl-dot"></span>Zero-downtime rolling deployments on EKS</div>
               <div class="highlight"><span class="hl-dot"></span>HPA scaling on CPU &amp; memory metrics</div>
-              <div class="highlight"><span class="hl-dot"></span>SonarQube quality gates block bad builds</div>
-              <div class="highlight"><span class="hl-dot"></span>Modular Terraform for multi-env parity</div>
+              <div class="highlight"><span class="hl-dot"></span>SonarQube quality gates block bad builds at source</div>
+              <div class="highlight"><span class="hl-dot"></span>Modular Terraform for consistent multi-env parity</div>
             </div>
           </div>
         </div>
@@ -275,22 +276,20 @@
             <div class="project-top">
               <h3>Secure Three-Tier AWS Architecture</h3>
               <div class="project-tags">
-                <span>VPC</span><span>EC2</span><span>RDS</span><span>S3</span><span>ALB</span><span>IAM</span><span>NAT Gateway</span>
+                <span>VPC</span><span>EC2</span><span>RDS</span><span>S3</span><span>ALB</span><span>IAM</span><span>NAT Gateway</span><span>ACM</span>
               </div>
             </div>
             <p>
-              Designed a production-grade three-tier AWS architecture with strict network segmentation.
-              Public subnets host the Application Load Balancer and NAT Gateway; private subnets contain
-              EC2 application servers and Multi-AZ RDS MySQL instances, with no direct internet exposure.
-              S3 was used for static assets and backups, secured via IAM bucket policies and server-side
-              encryption. Security groups enforced least-privilege rules between each tier, and ALB handled
-              SSL termination with ACM certificates, routing traffic based on path-based rules.
+              Architected a production-grade three-tier AWS environment with strict network segmentation designed around the principle of least privilege at every layer. The public subnets host only the Application Load Balancer and NAT Gateway — nothing else is directly internet-reachable. EC2 application servers live in private subnets with no public IP addresses, accessing the internet only through the NAT Gateway for package updates and outbound calls. The database tier runs Amazon RDS MySQL in Multi-AZ configuration across two Availability Zones with automated failover, also in private subnets with no route to the internet.
+            </p>
+            <p>
+              S3 is used for static asset delivery and backup storage, secured with IAM bucket policies enforcing deny-all-except-explicitly-allowed patterns and server-side AES-256 encryption. The Application Load Balancer terminates SSL using ACM-managed certificates and routes traffic using path-based rules, so a single ALB can serve multiple application endpoints. Security groups between each tier are tightly scoped — the web tier only accepts HTTPS from the internet; the app tier only accepts connections from the web tier's security group; the database tier only accepts MySQL port from the app tier.
             </p>
             <div class="project-highlights">
-              <div class="highlight"><span class="hl-dot"></span>Multi-AZ RDS with automated failover</div>
-              <div class="highlight"><span class="hl-dot"></span>ALB with ACM SSL termination</div>
-              <div class="highlight"><span class="hl-dot"></span>S3 server-side encryption &amp; lifecycle rules</div>
-              <div class="highlight"><span class="hl-dot"></span>Zero public exposure for app &amp; DB tiers</div>
+              <div class="highlight"><span class="hl-dot"></span>Multi-AZ RDS with automated standby failover</div>
+              <div class="highlight"><span class="hl-dot"></span>ALB with ACM SSL termination &amp; path routing</div>
+              <div class="highlight"><span class="hl-dot"></span>S3 server-side encryption &amp; lifecycle policies</div>
+              <div class="highlight"><span class="hl-dot"></span>Zero public exposure for application and database tiers</div>
             </div>
           </div>
         </div>
@@ -300,24 +299,22 @@
           <div class="project-number">03</div>
           <div class="project-content">
             <div class="project-top">
-              <h3>Auto Scaling &amp; Observability Platform</h3>
+              <h3>Automated Monitoring for Auto Scaling Groups via Ansible &amp; Lambda</h3>
               <div class="project-tags">
-                <span>EC2 ASG</span><span>CloudWatch</span><span>Lambda</span><span>Prometheus</span><span>Grafana</span><span>Ansible</span>
+                <span>Ansible</span><span>AWS Lambda</span><span>EC2 ASG</span><span>Prometheus</span><span>Grafana</span><span>CloudWatch Events</span>
               </div>
             </div>
             <p>
-              Implemented event-driven Auto Scaling for EC2 fleets using Auto Scaling Groups with
-              custom CloudWatch alarms on CPU utilization, request latency and memory metrics. AWS Lambda
-              functions subscribed to CloudWatch Events to automate instance lifecycle tasks — tagging new
-              instances, running Ansible playbooks for server bootstrapping and triggering Slack alerts.
-              Prometheus scraped metrics from all EC2 nodes and EKS pods, feeding Grafana dashboards
-              with real-time visibility into infrastructure health and application performance.
+              Solved a fundamental problem with ephemeral infrastructure: when new EC2 instances spin up inside an Auto Scaling Group during a traffic spike, they need Node Exporter installed and Prometheus needs to know they exist — all without anyone manually running commands. This project automates that entire workflow so monitoring coverage is maintained regardless of how the fleet scales.
+            </p>
+            <p>
+              Ansible playbooks were written to install and configure Node Exporter across Linux servers, with custom labels embedded directly in the playbook to ensure each instance is correctly identified in Prometheus scrape targets. EC2 tags on the Auto Scaling Group are configured so every new instance inherits consistent naming conventions at launch time. An AWS Lambda function is subscribed to CloudWatch Events for the <code>EC2 Instance Launch Successful</code> event — the moment a new node comes up, Lambda fires, SSM Run Command triggers the Ansible playbook on that instance, and within minutes Node Exporter is running and Prometheus has picked it up via dynamic service discovery. Grafana dashboards aggregate metrics from the entire fleet in real time, so during scale-out events operators have full visibility without any manual steps.
             </p>
             <div class="project-highlights">
-              <div class="highlight"><span class="hl-dot"></span>ASG scales in/out on CloudWatch alarms</div>
-              <div class="highlight"><span class="hl-dot"></span>Lambda automates instance bootstrapping</div>
-              <div class="highlight"><span class="hl-dot"></span>Grafana dashboards for full-stack metrics</div>
-              <div class="highlight"><span class="hl-dot"></span>Ansible idempotent playbooks for config</div>
+              <div class="highlight"><span class="hl-dot"></span>Lambda auto-triggers Ansible on every new ASG instance</div>
+              <div class="highlight"><span class="hl-dot"></span>Dynamic Prometheus discovery — no manual scrape config</div>
+              <div class="highlight"><span class="hl-dot"></span>Grafana dashboards across the full scaled fleet</div>
+              <div class="highlight"><span class="hl-dot"></span>Monitoring consistency maintained through scale-in &amp; out</div>
             </div>
           </div>
         </div>
@@ -333,18 +330,16 @@
               </div>
             </div>
             <p>
-              Architected a fully serverless ETL pipeline using S3 event notifications to trigger
-              AWS Lambda functions upon file uploads. Lambda functions — written in Python — processed,
-              validated and transformed incoming data, then wrote results to a separate S3 output bucket.
-              CloudWatch Logs captured all Lambda execution output with structured logging, and CloudWatch
-              Alarms notified on error rate spikes or duration thresholds. IAM execution roles followed
-              the least-privilege principle with resource-level S3 permissions and no wildcard policies.
+              Built a fully serverless ETL pipeline where S3 event notifications act as the trigger mechanism — the moment a file lands in the input bucket, an AWS Lambda function is invoked automatically with no polling, no queues to manage, and no servers to maintain. The Lambda functions, written in Python, handle the full processing lifecycle: reading the incoming file, validating the data structure, applying transformation logic, and writing the processed output to a separate S3 bucket.
+            </p>
+            <p>
+              Every Lambda execution emits structured JSON logs to CloudWatch Logs, making debugging and audit trails straightforward. CloudWatch Alarms are configured on Lambda error rates, throttle counts and p99 duration so any degradation triggers an alert before it becomes user-facing. All IAM execution roles follow resource-level least-privilege — each function's policy specifies exact S3 ARNs for read or write, with no wildcard actions or resources anywhere in the permission set. The result is a zero-maintenance, auto-scaling data pipeline that handles variable file volumes without provisioning or managing a single EC2 instance.
             </p>
             <div class="project-highlights">
-              <div class="highlight"><span class="hl-dot"></span>S3 event-driven Lambda invocations</div>
-              <div class="highlight"><span class="hl-dot"></span>Structured CloudWatch logging &amp; alarms</div>
-              <div class="highlight"><span class="hl-dot"></span>Zero-server ETL — no EC2 required</div>
-              <div class="highlight"><span class="hl-dot"></span>Least-privilege IAM per-resource policies</div>
+              <div class="highlight"><span class="hl-dot"></span>S3 event-driven Lambda invocations — zero polling</div>
+              <div class="highlight"><span class="hl-dot"></span>Structured CloudWatch logging with alarm thresholds</div>
+              <div class="highlight"><span class="hl-dot"></span>Zero-server ETL — fully serverless, auto-scaling</div>
+              <div class="highlight"><span class="hl-dot"></span>Resource-level least-privilege IAM per function</div>
             </div>
           </div>
         </div>
@@ -356,22 +351,20 @@
             <div class="project-top">
               <h3>Multi-Environment Infrastructure with Terraform &amp; GitLab CI</h3>
               <div class="project-tags">
-                <span>Terraform</span><span>GitLab CI/CD</span><span>VPC</span><span>EC2</span><span>IAM</span><span>S3 Backend</span>
+                <span>Terraform</span><span>GitLab CI/CD</span><span>VPC</span><span>EC2</span><span>IAM</span><span>S3 Backend</span><span>DynamoDB</span>
               </div>
             </div>
             <p>
-              Developed reusable Terraform modules for VPC, EC2, IAM and RDS to provision isolated
-              dev, staging and production environments from a single codebase. Remote state was stored
-              in S3 with DynamoDB state locking to prevent concurrent apply conflicts across teams.
-              GitLab CI/CD ran <code>terraform plan</code> on every merge request for automated drift
-              detection, and <code>terraform apply</code> on merge to main behind a manual approval gate.
-              IAM roles scoped per environment ensured complete blast-radius isolation.
+              Built a reusable Terraform module library covering VPC, EC2, IAM and RDS that provisions three fully isolated environments — dev, staging and production — from a single codebase. Each environment is parameterised through Terraform variable files, so the same module code creates a small t3.micro dev setup and a production-grade Multi-AZ deployment without any code duplication. Remote state is stored in S3 with DynamoDB state locking, which prevents two engineers from running <code>terraform apply</code> simultaneously and corrupting state.
+            </p>
+            <p>
+              GitLab CI/CD is wired into the Terraform workflow: every merge request automatically runs <code>terraform plan</code> and posts the output as a pipeline artifact so reviewers can see exactly what infrastructure will change before merging. Merging to main runs <code>terraform apply</code> behind a manual approval gate — a human has to click approve before any infrastructure is actually modified. IAM roles are scoped per environment, meaning a credential leak in dev cannot affect staging or production resources.
             </p>
             <div class="project-highlights">
-              <div class="highlight"><span class="hl-dot"></span>S3 + DynamoDB remote state locking</div>
-              <div class="highlight"><span class="hl-dot"></span>GitLab CI plan on PR, apply on merge</div>
-              <div class="highlight"><span class="hl-dot"></span>Reusable modules across 3 environments</div>
-              <div class="highlight"><span class="hl-dot"></span>Per-env IAM roles for blast-radius control</div>
+              <div class="highlight"><span class="hl-dot"></span>S3 + DynamoDB remote state locking across teams</div>
+              <div class="highlight"><span class="hl-dot"></span>GitLab CI runs plan on PR, apply requires manual gate</div>
+              <div class="highlight"><span class="hl-dot"></span>Reusable modules across dev, staging &amp; production</div>
+              <div class="highlight"><span class="hl-dot"></span>Per-environment IAM roles for complete blast-radius isolation</div>
             </div>
           </div>
         </div>
@@ -383,27 +376,23 @@
             <div class="project-top">
               <h3>High-Availability Web App with ELB &amp; RDS Multi-AZ</h3>
               <div class="project-tags">
-                <span>ELB</span><span>EC2</span><span>ASG</span><span>RDS Multi-AZ</span><span>CloudWatch</span><span>VPC</span>
+                <span>ELB</span><span>EC2</span><span>ASG</span><span>RDS Multi-AZ</span><span>CloudWatch</span><span>SNS</span><span>VPC</span>
               </div>
             </div>
             <p>
-              Deployed a highly available web application across two Availability Zones using an
-              Elastic Load Balancer distributing traffic to an Auto Scaling Group of EC2 instances.
-              The ASG maintained minimum healthy capacity and replaced unhealthy instances automatically
-              using EC2 health checks and ELB health endpoints. The database tier used Amazon RDS
-              Multi-AZ with automated standby failover under 60 seconds. CloudWatch dashboards tracked
-              ELB request counts, 5xx error rates and RDS replication lag, with SNS notifications for
-              threshold breaches.
+              Deployed a web application designed around the assumption that any single component can fail at any time — and the system keeps running without user-visible impact. Traffic enters through an Elastic Load Balancer spread across two Availability Zones, distributing requests to an Auto Scaling Group of EC2 instances. The ASG uses ELB health endpoint checks rather than just EC2 status checks, so an instance that's running but returning 5xx errors gets replaced automatically rather than silently serving errors.
+            </p>
+            <p>
+              The database layer uses Amazon RDS Multi-AZ, which keeps a synchronous standby replica in a second Availability Zone. If the primary fails — hardware issue, AZ outage — RDS promotes the standby and updates the DNS endpoint within 60 seconds, with no application configuration changes required. CloudWatch dashboards give real-time visibility into ELB request rates, 5xx error percentages and RDS replication lag. SNS notification topics are wired to CloudWatch Alarms so on-call engineers receive immediate alerts when error rates spike or replication lag climbs, well before users are impacted.
             </p>
             <div class="project-highlights">
-              <div class="highlight"><span class="hl-dot"></span>ELB across 2 AZs with health checks</div>
-              <div class="highlight"><span class="hl-dot"></span>ASG auto-replaces unhealthy EC2 nodes</div>
-              <div class="highlight"><span class="hl-dot"></span>RDS Multi-AZ failover under 60 seconds</div>
-              <div class="highlight"><span class="hl-dot"></span>SNS alerts on 5xx spike &amp; replication lag</div>
+              <div class="highlight"><span class="hl-dot"></span>ELB across 2 AZs with application health endpoint checks</div>
+              <div class="highlight"><span class="hl-dot"></span>ASG auto-replaces unhealthy EC2 instances without downtime</div>
+              <div class="highlight"><span class="hl-dot"></span>RDS Multi-AZ automatic failover under 60 seconds</div>
+              <div class="highlight"><span class="hl-dot"></span>SNS alerts on 5xx rate spikes and replication lag</div>
             </div>
           </div>
         </div>
-
 
         <!-- Project 07 -->
         <div class="project-card">
@@ -412,25 +401,20 @@
             <div class="project-top">
               <h3>Microservices Containerisation with Docker &amp; Kubernetes</h3>
               <div class="project-tags">
-                <span>Docker</span><span>Docker Compose</span><span>Kubernetes</span><span>Helm</span><span>Nginx</span><span>Prometheus</span><span>Grafana</span>
+                <span>Docker</span><span>Docker Compose</span><span>Kubernetes</span><span>Helm</span><span>Nginx Ingress</span><span>Prometheus</span><span>Grafana</span>
               </div>
             </div>
             <p>
-              Containerised a multi-service application — frontend (Nginx), backend API and MySQL
-              database — using Docker and Docker Compose for local development parity. Each service
-              was packaged as a versioned Docker image and pushed to a private registry. The stack was
-              then migrated to Kubernetes using hand-crafted manifests: Deployments, Services,
-              ConfigMaps, Secrets and PersistentVolumeClaims. Helm charts were authored to template
-              the entire release, enabling parameterised deploys across namespaces. Nginx acted as
-              the ingress controller handling path-based routing and SSL passthrough. Prometheus
-              scraped pod-level metrics via ServiceMonitor CRDs and Grafana dashboards visualised
-              container CPU, memory, request rate and error budgets in real time.
+              Containerised a full multi-service application stack — Nginx frontend, backend REST API and MySQL database — so that the local development environment is byte-for-byte identical to what runs in production. Docker Compose handled local orchestration with service networking, named volumes and environment variable injection. Each service was packaged into a versioned image and stored in a private registry, ensuring deployments reference exact image SHAs rather than mutable tags.
+            </p>
+            <p>
+              The migration to Kubernetes used hand-crafted manifests rather than auto-generated YAML: Deployments with carefully tuned resource requests and limits, Services for intra-cluster networking, ConfigMaps for application configuration, Secrets for credentials, and PersistentVolumeClaims for the MySQL data directory. Helm charts were authored on top of those manifests to support parameterised releases — the same chart deploys to a test namespace with minimal resources and to production with full replica counts by swapping value files. Nginx acts as the Ingress controller handling path-based routing and SSL passthrough. Prometheus scrapes pod-level metrics via ServiceMonitor custom resources and feeds Grafana dashboards tracking container CPU, memory usage, HTTP request rates and error budgets in real time.
             </p>
             <div class="project-highlights">
-              <div class="highlight"><span class="hl-dot"></span>Docker Compose for dev / Kubernetes for prod</div>
-              <div class="highlight"><span class="hl-dot"></span>Helm charts with per-env value overrides</div>
-              <div class="highlight"><span class="hl-dot"></span>Nginx ingress with path-based routing &amp; SSL</div>
-              <div class="highlight"><span class="hl-dot"></span>Prometheus + Grafana full container observability</div>
+              <div class="highlight"><span class="hl-dot"></span>Docker Compose for dev / Kubernetes manifests for prod</div>
+              <div class="highlight"><span class="hl-dot"></span>Helm charts with per-environment value overrides</div>
+              <div class="highlight"><span class="hl-dot"></span>Nginx Ingress with path-based routing and SSL</div>
+              <div class="highlight"><span class="hl-dot"></span>Prometheus + Grafana full container observability stack</div>
             </div>
           </div>
         </div>
@@ -446,21 +430,73 @@
               </div>
             </div>
             <p>
-              Established a fully GitOps-driven delivery workflow where the Git repository is the
-              single source of truth for all Kubernetes state. GitHub Actions handled the CI phase —
-              running Maven builds, SonarQube quality gates and Docker image builds — then committed
-              updated Helm chart image tags back to the config repository. ArgoCD watched the config
-              repo and automatically synced desired state to the Kubernetes cluster using Application
-              CRDs with self-healing enabled, meaning any out-of-band cluster changes were reverted
-              instantly. Ansible playbooks bootstrapped fresh Kubernetes nodes, installing required
-              system packages, container runtime and joining nodes to the cluster. Rollbacks were
-              one-command Git reverts, making recovery from bad releases deterministic and auditable.
+              Established a fully GitOps-driven delivery model where the Git repository is the authoritative source of truth for all cluster state — no kubectl commands, no manual deployments, no configuration drift. The workflow is split cleanly between CI and CD: GitHub Actions owns the CI phase, running Maven builds, SonarQube quality gates and Docker image builds. On a successful build, the CI pipeline commits the new image tag back to the Helm chart in the configuration repository rather than applying it directly to the cluster.
+            </p>
+            <p>
+              ArgoCD monitors the configuration repository and detects when the desired state diverges from what's running in the cluster. It automatically syncs the new image tag and applies the updated Helm chart to Kubernetes. Self-healing is enabled on the ArgoCD Application CRD, so any out-of-band manual change to the cluster — an engineer editing a Deployment directly with kubectl — is automatically reverted to match what's in Git within seconds. Ansible playbooks handle the day-zero Kubernetes node bootstrapping: installing the container runtime, applying kernel parameters and joining nodes to the cluster with no manual SSH steps. Rollbacks are a one-line Git revert — the history is auditable, the recovery is deterministic.
             </p>
             <div class="project-highlights">
-              <div class="highlight"><span class="hl-dot"></span>ArgoCD self-healing — drift auto-corrected</div>
-              <div class="highlight"><span class="hl-dot"></span>GitHub Actions CI pushes new image tags to Git</div>
-              <div class="highlight"><span class="hl-dot"></span>SonarQube gates integrated in CI before deploy</div>
-              <div class="highlight"><span class="hl-dot"></span>Ansible bootstraps nodes — zero manual steps</div>
+              <div class="highlight"><span class="hl-dot"></span>ArgoCD self-healing — out-of-band drift reverted instantly</div>
+              <div class="highlight"><span class="hl-dot"></span>GitHub Actions CI commits new image tags back to Git</div>
+              <div class="highlight"><span class="hl-dot"></span>SonarQube quality gates block bad code before any deploy</div>
+              <div class="highlight"><span class="hl-dot"></span>Ansible bootstraps Kubernetes nodes — zero manual steps</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Project 09 — HireWalk -->
+        <div class="project-card project-card--featured">
+          <div class="project-number">09</div>
+          <div class="project-content">
+            <div class="project-top">
+              <div class="project-title-group">
+                <h3>HireWalk — Walk-in Interview Slot Booking Platform</h3>
+                <a href="https://github.com/Ranjit-08/hackathon-projecct" target="_blank" rel="noopener noreferrer" class="project-link">
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="currentColor"><path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0 0 24 12c0-6.63-5.37-12-12-12z"/></svg>
+                  GitHub
+                </a>
+              </div>
+              <div class="project-tags">
+                <span>Flask</span><span>Gunicorn</span><span>MySQL</span><span>Nginx</span><span>Terraform</span><span>GitHub Actions</span><span>AWS CloudFront</span><span>ALB</span><span>EC2 ASG</span><span>RDS</span><span>CloudWatch</span><span>Groq LLaMA</span>
+              </div>
+            </div>
+
+            <div class="project-section-label">The Problem</div>
+            <p>
+              Walk-in interviews are the dominant hiring format for freshers and mid-level roles in India — and the experience is broken on both sides. Candidates show up at a venue with no idea about slot timings, wait in queues for hours, and often leave without getting interviewed at all. Companies have no way to predict candidate volume, end up with empty slots or severe overcrowding, and collect zero data on actual attendance.
+            </p>
+            <p>
+              HireWalk digitises the entire process. Companies post walk-in drives with a job description, package, date and time slots with defined capacity limits. Candidates browse open drives, pick a slot that fits their schedule, and receive an automated confirmation email instantly. A chaotic physical queue becomes a structured, pre-booked system — while keeping the open "anyone can apply" nature of walk-in hiring intact.
+            </p>
+
+            <div class="project-section-label">What It Does</div>
+            <p>
+              Two distinct user types — companies and job seekers — each have their own authenticated dashboard. Companies register, post drives, define multiple time slots with per-slot capacity, and track exactly who has booked which slot. Candidates register, browse active drives by company or role, book a slot, and receive an email confirmation automatically. The platform also includes an AI mock interview feature powered by Groq's LLaMA model: candidates can practice before their actual interview with a conversational AI that evaluates each response and provides structured feedback.
+            </p>
+
+            <div class="project-section-label">Engineering Challenges &amp; How They Were Solved</div>
+            <p>
+              <strong>OTP verification breaking under Gunicorn workers.</strong> OTPs were initially stored in Python's in-memory dictionary — fine in development but broken in production, because each Gunicorn worker has its own isolated memory space. A user generating an OTP on worker 1 and verifying it on worker 2 always failed. The fix was moving OTP storage to a dedicated <code>otp_store</code> database table with a timestamp column, so any worker can read the same record. A 10-minute expiry is enforced by comparing the stored timestamp at verification time.
+            </p>
+            <p>
+              <strong>Slot double-booking race condition.</strong> When two candidates simultaneously tried to book the last available slot, both would pass the capacity check and both bookings would commit, exceeding the slot limit. This was resolved using a <code>SELECT ... FOR UPDATE</code> row lock on the time slot record inside a database transaction. The second request waits at the lock until the first either commits or rolls back before it can read the capacity count — guaranteeing slot limits are never exceeded regardless of concurrent traffic.
+            </p>
+            <p>
+              <strong>Terraform deployment failing on CloudFront ACM certificate.</strong> The CloudFront distribution was failing because the ACM certificate provider alias was incorrectly set to <code>us-west-2</code>. CloudFront is a global service that requires SSL certificates to exist specifically in <code>us-east-1</code> — this is a hard AWS constraint with no workaround. The fix was correcting the provider alias in <code>versions.tf</code> from <code>us_west_2</code> to <code>us_east_1</code>.
+            </p>
+
+            <div class="project-section-label">Infrastructure &amp; Monitoring</div>
+            <p>
+              All infrastructure is provisioned with Terraform — CloudFront distribution, ALB, EC2 Auto Scaling Groups, RDS MySQL, SSM Parameter Store and CloudWatch alarms are all defined as code and deployed via GitHub Actions CI/CD. CloudWatch alarms on both ASGs trigger scale-out above 70% CPU and scale-in below 30%. RDS alarms fire when CPU exceeds 80% or free storage drops below 5 GB. The CloudWatch Agent runs on EC2 instances via IAM policy, streaming system logs and metrics automatically. RDS exports slow query, error and general logs to CloudWatch Logs for query-level debugging.
+            </p>
+
+            <div class="project-highlights">
+              <div class="highlight"><span class="hl-dot"></span>DB row locking eliminates slot double-booking race condition</div>
+              <div class="highlight"><span class="hl-dot"></span>Database-backed OTP storage works across all Gunicorn workers</div>
+              <div class="highlight"><span class="hl-dot"></span>Full Terraform IaC — entire AWS stack as code</div>
+              <div class="highlight"><span class="hl-dot"></span>GitHub Actions CI/CD — infra &amp; app deployed on every push</div>
+              <div class="highlight"><span class="hl-dot"></span>AI mock interviews via Groq LLaMA with per-answer feedback</div>
+              <div class="highlight"><span class="hl-dot"></span>CloudWatch auto-scaling + RDS monitoring across the full stack</div>
             </div>
           </div>
         </div>
@@ -507,11 +543,11 @@
       </p>
 
       <div class="contact-grid">
-        <a href="/cdn-cgi/l/email-protection#097b686763607d7a68646865687b63496e64686065276a6664" class="contact-card">
+        <a href="mailto:ranjitsamal08@gmail.com" class="contact-card">
           <div class="contact-icon">✉</div>
           <div>
             <span class="contact-label">Email</span>
-            <span class="contact-value"><span class="__cf_email__" data-cfemail="1b697a7571726f687a767a777a69715b7c767a727735787476">[email&#160;protected]</span></span>
+            <span class="contact-value">ranjitsamal08@gmail.com</span>
           </div>
         </a>
         <a href="tel:+916370224907" class="contact-card">
@@ -531,7 +567,7 @@
       </div>
 
       <div class="contact-cta">
-        <a href="/cdn-cgi/l/email-protection#0476656a6e6d70776569656865766e446369656d682a676b69" class="btn-primary large">Send a Message</a>
+        <a href="mailto:ranjitsamal08@gmail.com" class="btn-primary large">Send a Message</a>
         <a href="Resume.pdf" download class="btn-ghost large">Download Resume</a>
       </div>
     </div>
@@ -549,13 +585,13 @@
   </footer>
 
   <script>
-    // Header scroll
+    // Header scroll effect
     const header = document.getElementById('header');
     window.addEventListener('scroll', () => {
       header.classList.toggle('scrolled', window.scrollY > 60);
     });
 
-    // Animate skill bars when visible
+    // Animate skill bars when in viewport
     const bars = document.querySelectorAll('.bar-fill');
     const barObserver = new IntersectionObserver(entries => {
       entries.forEach(e => {
